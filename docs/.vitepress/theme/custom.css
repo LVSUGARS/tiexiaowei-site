@@ -220,3 +220,53 @@ ol.steps li b {
   color: var(--vp-c-text-2);
   margin-top: 2px;
 }
+
+/* ===== 表格美化(全站:圆角 + 品牌色表头 + 悬停高亮) ===== */
+.vp-doc table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 16px 0;
+}
+.vp-doc th,
+.vp-doc td {
+  border: none;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding: 11px 16px;
+}
+.vp-doc thead th {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  border-bottom: 1px solid var(--vp-c-brand-1);
+}
+.vp-doc tbody tr {
+  transition: background-color 0.2s;
+}
+.vp-doc tbody tr:hover {
+  background: var(--vp-c-bg-soft);
+}
+.vp-doc tbody tr:last-child td {
+  border-bottom: none;
+}
+.vp-doc thead th:first-child {
+  border-top-left-radius: 10px;
+}
+.vp-doc thead th:last-child {
+  border-top-right-radius: 10px;
+}
+.vp-doc tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+.vp-doc tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* ===== 行内链接:下划线透明化,悬停淡入(不改变排版) ===== */
+.vp-doc a {
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.25s, color 0.25s;
+}
+.vp-doc a:hover {
+  text-decoration-color: currentColor;
+}
