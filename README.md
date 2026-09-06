@@ -2,8 +2,8 @@
 
 南京铁道职业技术学院铁小微融媒体中心的介绍页与内容档案馆,基于 VitePress 构建的纯静态站点。
 
-- **线上地址(GitHub Pages)**:<https://lvsugars.cc.cd/tiexiaowei-site/>
-- **仓库**:<https://github.com/LVSUGARS/tiexiaowei-site>(main 分支 push 即自动部署)
+- **仓库**:<https://github.com/LVSUGARS/tiexiaowei-site>(内容唯一真源)
+- **部署**:待新域名确定后接入(GitHub Pages 工作流保留在 git 历史可恢复;Cloudflare Pages 步骤见[交接手册](docs/maintainer/handover.md);构建命令 `pnpm build`,产物目录 `docs/.vitepress/dist`)
 - **框架设计计划书**:[PLAN.md](./PLAN.md)(v0.9,先读这个)
 - **系统端(主应用)**:https://njrts.txwrmtzx.top/ (后台 `/admin/` · 成员端 `/member/` · 新生报名 `/register/`,入口统一配置在 `docs/.vitepress/appLinks.ts`)
 
