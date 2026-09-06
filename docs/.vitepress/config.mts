@@ -75,7 +75,9 @@ export default defineConfig({
       GitChangelog({
         repoURL: () => 'https://github.com/LVSUGARS/tiexiaowei-site'
       }),
-      GitChangelogMarkdownSection()
+      GitChangelogMarkdownSection({
+        sections: { disableContributors: true } // 底部只保留"页面历史",不展示贡献者头像
+      })
     ]
   },
   themeConfig: {
