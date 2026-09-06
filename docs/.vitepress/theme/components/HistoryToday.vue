@@ -1,21 +1,21 @@
 <script setup>
-// 历史上的今天:台账日期命中当天才显示
+// 历史上的今天:台账日期命中当天才显示(数据来自活动自动化加载器)
 import { computed } from 'vue'
-import { activityIndex } from '../../data/activityIndex'
+import { data as activities } from '../../data/activityIndex.data.js'
 
 const mmdd = computed(() => {
   const now = new Date()
   return `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
 })
 
-const hits = computed(() => activityIndex.filter((a) => a.date.slice(5) === mmdd.value))
+const hits = computed(() => activities.filter((a) => a.date.slice(5) === mmdd.value))
 </script>
 
 <template>
   <div v-if="hits.length" class="history-today">
     <span class="ht-label">📅 历史上的今天</span>
-    <span v-for="h in hits" :key="h.link" class="ht-item">
-      {{ h.date.slice(0, 4) }} 年的今天——<a :href="h.link">{{ h.title }}</a>
+    <span v-for="h in hits" :key="h.url" class="ht-item">
+      {{ h.date.slice(0, 4) }} 年的今天——<a :href="h.url">{{ h.title }}</a>
     </span>
   </div>
 </template>

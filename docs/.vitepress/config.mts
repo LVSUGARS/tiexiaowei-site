@@ -69,6 +69,10 @@ export default defineConfig({
   ],
   // 教程页会引用 http://localhost:5173,放行 localhost 形式的链接
   ignoreDeadLinks: [/^https?:\/\/localhost/],
+  // 高亮插件的 client 引用了原始 .vue 文件,需让 SSR 构建走 Vite 编译管线
+  ssr: {
+    noExternal: ['@nolebase/vitepress-plugin-highlight-targeted-heading']
+  },
   sitemap: {
     // 部署平台确定后替换为正式域名(候选:Cloudflare Pages,见交接手册)
     hostname: 'https://tiexiaowei.example.com'

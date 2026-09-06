@@ -4,6 +4,7 @@ title: 活动存档
 
 <script setup>
 import HistoryToday from '../.vitepress/theme/components/HistoryToday.vue'
+import ActivityTimeline from '../.vitepress/theme/components/ActivityTimeline.vue'
 </script>
 
 # 活动存档 —— 每场必录的工作台账
@@ -22,24 +23,7 @@ import HistoryToday from '../.vitepress/theme/components/HistoryToday.vue'
 
 ## 时间轴
 
-<h3 class="tl-year">2026</h3>
-<div class="tl">
-  <a class="tl-item" href="/activity/sample-shooting-task">
-    <span class="tl-date">09-20 · 拍摄任务 · 未发布</span>
-    <span class="tl-title">示例 · 迎新晚会拍摄</span>
-  </a>
-</div>
-<h3 class="tl-year">2022</h3>
-<div class="tl">
-  <a class="tl-item" href="/activity/2022-vocational-week">
-    <span class="tl-date">05-13 · 官方活动</span>
-    <span class="tl-title">职教周铁路科普系列短视频</span>
-  </a>
-  <a class="tl-item" href="/activity/railway-museum">
-    <span class="tl-date">01-01(占位) · 官方活动</span>
-    <span class="tl-title">铁小微带你看江苏铁路教育馆</span>
-  </a>
-</div>
+<ActivityTimeline />
 
 ## 台账模板(每场活动一页)
 
@@ -69,4 +53,4 @@ outputs:
 
 ## 收录与自动化
 
-<VPBadge type="warning">补录中</VPBadge> 更多活动按年补录;时间轴与"历史上的今天"由 `data/activityIndex.js` 驱动——**新增活动时追加一条即可**,三处展示自动生效。列表页自动化(按年/类型筛选)在数据积累后配置。
+<VPBadge type="warning">补录中</VPBadge> 时间轴与"历史上的今天"由 `activityIndex.data.js` **自动扫描** `docs/activity/*.md` 的 frontmatter 生成——**新增活动只需新建 md 页面**,无需登记任何列表。更多列表页自动化(资料库/文章库)按 M3 计划推进。

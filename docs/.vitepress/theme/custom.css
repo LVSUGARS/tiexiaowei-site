@@ -269,6 +269,21 @@ ol.steps li b {
   border-bottom-right-radius: 12px;
 }
 
+/* 锚点跳转高亮:纯 CSS :target 实现(替代 nolebase 高亮插件的 SSR 兼容方案) */
+@keyframes target-flash {
+  0% {
+    background-color: var(--vp-c-brand-soft);
+    box-shadow: 0 0 0 8px var(--vp-c-brand-soft);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+.vp-doc :target {
+  animation: target-flash 2.5s ease;
+}
+
 /* ===== 活动时间轴(档案馆人设) ===== */
 .tl-year {
   font-size: 15px;
