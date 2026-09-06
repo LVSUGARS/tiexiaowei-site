@@ -37,6 +37,13 @@ title: 换届交接手册
 
 资料三份副本:部门网盘(原始包)+ GitHub Releases(按年打包)+ 站点仓库(索引与精选)。每学期末核对一次。
 
+## 当前部署信息
+
+- 平台:GitHub Pages(`Source: GitHub Actions`,工作流 `.github/workflows/deploy.yml`)
+- 正式地址:<https://txwrmtzx.top/>(仓库 Settings → Pages 绑定的自定义根域)
+- 更新方式:push 到 `main` 自动构建发布,无需手动操作
+- DNS:根域 `txwrmtzx.top` 托管在 Cloudflare,根域按 GitHub Pages 指引指向 GitHub;`njrts.txwrmtzx.top` 走 Cloudflare Tunnel 指向本机业务系统,与介绍站互不影响
+
 ## 可选:迁移到 Cloudflare Pages(境内访问优化)
 
 当前站点部署在 GitHub Pages(自动部署,push 即发布)。如境内访问速度不理想,可加部署一份 Cloudflare Pages:
