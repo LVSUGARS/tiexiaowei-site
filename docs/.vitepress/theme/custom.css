@@ -1,16 +1,16 @@
-/* 品牌色占位:当前使用"铁路红"。拿到学校 VI 标准色后只需改这四个变量。 */
+/* 品牌色:DeepSeek 同款蓝(全站唯一色板,改这里即可换肤) */
 :root {
-  --vp-c-brand-1: #b12b31;
-  --vp-c-brand-2: #c94b50;
-  --vp-c-brand-3: #8f2229;
-  --vp-c-brand-soft: rgba(177, 43, 49, 0.14);
+  --vp-c-brand-1: #4d6bfe;
+  --vp-c-brand-2: #6580ff;
+  --vp-c-brand-3: #3f56cc;
+  --vp-c-brand-soft: rgba(77, 107, 254, 0.14);
 }
 
 .dark {
-  --vp-c-brand-1: #d4545a;
-  --vp-c-brand-2: #c94b50;
-  --vp-c-brand-3: #e07076;
-  --vp-c-brand-soft: rgba(212, 84, 90, 0.16);
+  --vp-c-brand-1: #7c93ff;
+  --vp-c-brand-2: #6580ff;
+  --vp-c-brand-3: #98aaff;
+  --vp-c-brand-soft: rgba(124, 147, 255, 0.16);
 }
 
 /* 首页一体化背板:hero 与内容面板共享同一片渐变,无断缝 */
@@ -23,14 +23,14 @@
   --vp-home-hero-name-color: transparent;
 }
 .VPHero .name.clip {
-  background-image: linear-gradient(120deg, #6e1a1f 0%, #b12b31 30%, #d4545a 52%, #e0894f 76%, #f2b950 100%);
+  background-image: linear-gradient(120deg, #1b2a6b 0%, #4d6bfe 35%, #6580ff 58%, #38bdf8 82%, #7dd3fc 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   animation: hero-name-shimmer 9s linear infinite;
 }
 .dark .VPHero .name.clip {
-  background-image: linear-gradient(120deg, #f2b950 0%, #e0894f 28%, #d4545a 52%, #a83a40 76%, #7a1f24 100%);
+  background-image: linear-gradient(120deg, #7dd3fc 0%, #38bdf8 28%, #6580ff 52%, #4d6bfe 76%, #2b3f9e 100%);
 }
 @keyframes hero-name-shimmer {
   to { background-position: 200% center; }
