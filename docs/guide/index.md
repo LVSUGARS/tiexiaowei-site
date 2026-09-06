@@ -3,7 +3,7 @@ title: 加入我们
 ---
 
 <script setup>
-import { VPButton, VPFeatures } from 'vitepress/theme'
+import { VPButton } from 'vitepress/theme'
 import { signupUrl, memberUrl } from '../.vitepress/appLinks'
 </script>
 
@@ -23,14 +23,14 @@ import { signupUrl, memberUrl } from '../.vitepress/appLinks'
 
 ## 六大部门,总有一个适合你
 
-<VPFeatures :features="[
-  { icon: '🎬', title: '视频部(A/B)', details: '活动摄像、剪辑成片——学校每场大活动都有我们的机位。', link: '/department/video', linkText: '部门介绍' },
-  { icon: '📷', title: '摄影部', details: '活动跟拍与图集,用照片沉淀校园记忆。', link: '/department/photo', linkText: '部门介绍' },
-  { icon: '🎙️', title: '音频部', details: '现场收音调音、配音与音频后期,画面之外的另一半体验。', link: '/department/audio', linkText: '部门介绍' },
-  { icon: '✍️', title: '采编部(A/B)', details: '新闻采写、推文撰稿、专题策划,把校园故事讲给更多人听。', link: '/department/caibian', linkText: '部门介绍' },
-  { icon: '🗂️', title: '办公室', details: '统筹协调、考勤物资、纳新组织,中心运转的调度中枢。', link: '/department/office', linkText: '部门介绍' },
-  { icon: '🎨', title: '设计部', details: '海报、物料、栏目包装,定义铁小微的视觉气质。', link: '/department/design', linkText: '部门介绍' }
-]" />
+<div class="card-grid cols-3">
+  <a class="card" href="/department/video"><span class="icon">🎬</span><span><span class="name">视频部(A/B)</span><span class="desc">活动摄像与成片制作</span></span></a>
+  <a class="card" href="/department/photo"><span class="icon">📷</span><span><span class="name">摄影部</span><span class="desc">活动跟拍与图集供图</span></span></a>
+  <a class="card" href="/department/audio"><span class="icon">🎙️</span><span><span class="name">音频部</span><span class="desc">收音调音与音频后期</span></span></a>
+  <a class="card" href="/department/caibian"><span class="icon">✍️</span><span><span class="name">采编部(A/B)</span><span class="desc">采写、推文与专题策划</span></span></a>
+  <a class="card" href="/department/office"><span class="icon">🗂️</span><span><span class="name">办公室</span><span class="desc">统筹协调与纳新组织</span></span></a>
+  <a class="card" href="/department/design"><span class="icon">🎨</span><span><span class="name">设计部</span><span class="desc">海报物料与视觉包装</span></span></a>
+</div>
 
 > ⚠️ 以上为 2026-2027 学年架构;具体职责说明为拟定稿,以中心内部确认为准。
 

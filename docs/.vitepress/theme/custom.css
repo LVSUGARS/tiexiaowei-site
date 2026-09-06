@@ -163,3 +163,58 @@ ol.steps li b {
   color: var(--vp-c-text-2);
   margin-top: 4px;
 }
+
+/* 紧凑小卡网格(内页通用,横向布局省高度) */
+.card-grid {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+}
+.card-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.card-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 960px) {
+  .card-grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .card-grid.cols-3,
+  .card-grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+.card-grid .card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg);
+  text-decoration: none;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.card-grid .card:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--vp-c-brand-soft);
+}
+.card-grid .card .icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.card-grid .card .name {
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--vp-c-text-1);
+}
+.card-grid .card .desc {
+  display: block;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+}
