@@ -186,6 +186,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '站点维护人员', link: '/maintainer/' },
+            { text: '数据更新教程', link: '/maintainer/update-tutorial' },
             { text: '维护指南', link: '/maintainer/guide' }
           ]
         },
