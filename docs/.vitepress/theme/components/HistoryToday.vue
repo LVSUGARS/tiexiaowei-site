@@ -1,14 +1,14 @@
 <script setup>
-// 历史上的今天:台账日期命中当天才显示(数据来自活动自动化加载器)
+// 历史上的今天:台账日期命中当天才显示(数据经 normalize 规范化)
 import { computed } from 'vue'
-import { data as activities } from '../../data/activityIndex.data.js'
+import { data as raw, normalize } from '../../data/activityIndex.data.js'
 
 const mmdd = computed(() => {
   const now = new Date()
   return `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
 })
 
-const hits = computed(() => activities.filter((a) => a.date.slice(5) === mmdd.value))
+const hits = computed(() => normalize(raw).filter((a) => a.date.slice(5, 10) === mmdd.value))
 </script>
 
 <template>

@@ -5,17 +5,7 @@
 import { computed } from 'vue'
 import { data as raw } from '../../data/activityIndex.data.js'
 
-const activities = computed(() =>
-  (Array.isArray(raw) ? raw : [])
-    .map((d) => ({
-      url: d.url || '',
-      title: d.frontmatter?.title || d.title || d.url,
-      date: String(d.frontmatter?.date || d.date || ''),
-      type: d.frontmatter?.type || d.type || '活动'
-    }))
-    .filter((d) => d.date && !d.url.endsWith('/activity/'))
-    .sort((a, b) => b.date.localeCompare(a.date))
-)
+const activities = computed(() => normalize(raw))
 
 const years = computed(() =>
   [...new Set(activities.value.map((a) => a.date.slice(0, 4)))].sort((a, b) => b.localeCompare(a))
