@@ -1,7 +1,8 @@
 <script setup>
 // 历史上的今天:台账日期命中当天才显示(数据经 normalize 规范化)
 import { computed } from 'vue'
-import { data as raw, normalize } from '../../data/activityIndex.data.js'
+import { data as raw } from '../../data/activityIndex.data.js'
+import { normalize } from '../../data/activityNormalize.js'
 
 const mmdd = computed(() => {
   const now = new Date()

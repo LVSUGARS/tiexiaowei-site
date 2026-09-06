@@ -4,6 +4,7 @@
 // 因此这里做防御性映射,兼容两种形态
 import { computed } from 'vue'
 import { data as raw } from '../../data/activityIndex.data.js'
+import { normalize } from '../../data/activityNormalize.js'
 
 const activities = computed(() => normalize(raw))
 
