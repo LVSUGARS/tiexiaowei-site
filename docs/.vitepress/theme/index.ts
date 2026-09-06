@@ -1,6 +1,8 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import { VPBadge } from 'vitepress/theme'
+import { NolebaseGitChangelogPlugin } from '@nolebase/vitepress-plugin-git-changelog/client'
+import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 import HomePanel from './components/HomePanel.vue'
 import FeedbackLine from './components/FeedbackLine.vue'
 import AnnouncementBanner from './components/AnnouncementBanner.vue'
@@ -11,6 +13,8 @@ export default {
   // 让所有 Markdown 文件无需 import 即可使用 <VPBadge type="...">。
   enhanceApp({ app }) {
     app.component('VPBadge', VPBadge)
+    // 页面历史(GitChangelog)客户端组件
+    app.use(NolebaseGitChangelogPlugin)
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {

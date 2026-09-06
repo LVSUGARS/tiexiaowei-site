@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { memberUrl } from './appLinks'
+import { GitChangelog, GitChangelogMarkdownSection } from '@nolebase/vitepress-plugin-git-changelog/vite'
 
 // 档案馆统一侧栏:/archive/ /activity/ /resources/ /library/ 四类路径共用
 // 规则:侧栏只到"分组级"(年 / 类型),单篇文章与单个条目不进侧栏,走各库列表页
@@ -53,8 +54,8 @@ export default defineConfig({
   title: '铁小微融媒体中心',
   description:
     '南京铁道职业技术学院铁小微融媒体中心官方站:新媒体矩阵、活动存档与公众号文章档案馆。',
-  // 站点完成 git 首次提交后,可改为 true 以显示每页"最后更新于"时间
-  lastUpdated: false,
+  // 每页底部"最后更新于"时间戳,数据来自 git 提交历史
+  lastUpdated: true,
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['meta', { name: 'keywords', content: '铁小微,南京铁道职业技术学院,南铁院,融媒体,校园媒体,大学生记者' }],
@@ -66,6 +67,16 @@ export default defineConfig({
   sitemap: {
     // 占位域名,上线时替换为正式域名
     hostname: 'https://tiexiaowei.example.com'
+  },
+  vite: {
+    plugins: [
+      // 页面历史(GitChangelog):仓库建立后,每页底部展示变更记录
+      // repoURL 为占位,GitHub 仓库建立后替换为真实地址
+      GitChangelog({
+        repoURL: () => 'https://github.com/LVSUGARS/tiexiaowei-site'
+      }),
+      GitChangelogMarkdownSection()
+    ]
   },
   themeConfig: {
     nav: [
@@ -177,6 +188,10 @@ export default defineConfig({
       }
     },
     outline: { level: [2, 3], label: '本页目录' },
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: { dateStyle: 'medium', timeStyle: 'short' }
+    },
     docFooter: { prev: '上一篇', next: '下一篇' },
     returnToTopLabel: '回到顶部',
     sidebarMenuLabel: '目录',
