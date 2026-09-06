@@ -23,7 +23,7 @@ import { signupUrl, memberUrl } from '../.vitepress/appLinks'
 
 ## 六大部门,总有一个适合你
 
-<div class="card-grid cols-3">
+<div class="card-grid cols-2">
   <a class="card" href="/department/video"><span class="icon">🎬</span><span><span class="name">视频部(A/B)</span><span class="desc">活动摄像与成片制作</span></span></a>
   <a class="card" href="/department/photo"><span class="icon">📷</span><span><span class="name">摄影部</span><span class="desc">活动跟拍与图集供图</span></span></a>
   <a class="card" href="/department/audio"><span class="icon">🎙️</span><span><span class="name">音频部</span><span class="desc">收音调音与音频后期</span></span></a>
