@@ -44,16 +44,12 @@ docs/
 
 ## 系统入口(重要)
 
-顶部导航"成员端 ↗"、首页"系统入口"卡片、招新页报名按钮、维护者页后台入口,**全部**读取 `docs/.vitepress/appLinks.ts`。主应用路由变更时只改这一个文件。
+顶部导航"成员端 ↗"、首页"系统入口"卡片、招新页报名按钮,**全部**读取 `docs/.vitepress/appLinks.ts`。主应用路由变更时只改这一个文件。
 
 ## 发布流程
 
-main 分支 push → CI 自动构建部署(待 M4 配置 GitHub Actions / Cloudflare Pages)。日常内容更新走 PR,由当值维护者合并。
+main 分支 push → GitHub Actions 自动构建并发布到 GitHub Pages(工作流见 `.github/workflows/deploy.yml`)。日常内容更新走 PR,由当值维护者合并。
 
 ## 管理后台
 
-中心系统端后台:<a :href="adminUrl" target="_blank" rel="noopener">后台管理 ↗</a>(管理员专用)。
-
-<script setup>
-import { adminUrl } from '../.vitepress/appLinks'
-</script>
+中心系统端后台仅对管理员开放,入口不在公开站展示;需要权限请联系现任管理员。

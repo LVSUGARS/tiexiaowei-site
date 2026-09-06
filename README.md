@@ -3,7 +3,7 @@
 南京铁道职业技术学院铁小微融媒体中心的介绍页与内容档案馆,基于 VitePress 构建的纯静态站点。
 
 - **仓库**:<https://github.com/LVSUGARS/tiexiaowei-site>(内容唯一真源)
-- **部署**:待新域名确定后接入(GitHub Pages 工作流保留在 git 历史可恢复;Cloudflare Pages 步骤见[交接手册](docs/maintainer/handover.md);构建命令 `pnpm build`,产物目录 `docs/.vitepress/dist`)
+- **部署**:GitHub Pages 自动部署(push 到 `main` 即发布),线上地址 <https://txwrmtzx.top/>;构建命令 `pnpm build`,产物目录 `docs/.vitepress/dist`
 - **框架设计计划书**:[PLAN.md](./PLAN.md)(v0.9,先读这个)
 - **系统端(主应用)**:https://njrts.txwrmtzx.top/ (后台 `/admin/` · 成员端 `/member/` · 新生报名 `/register/`,入口统一配置在 `docs/.vitepress/appLinks.ts`)
 
@@ -31,7 +31,7 @@ pnpm preview      # 预览构建产物
 ## 当前状态
 
 - ✅ 骨架、内容、GitHub 仓库全部完成(每页可溯源)
-- ⏳ 部署:待新域名确定后接入(GitHub Pages 工作流或 Cloudflare Pages,均见交接手册)
+- ✅ 部署:GitHub Pages + 自定义根域 <https://txwrmtzx.top/>(push `main` 自动发布)
 - ⏳ M3 公众号数据接入(方案见 PLAN.md 第五节,目录表模板在 `data/`)
 - ⏳ 可选增强:Nolebase 增强插件(标题高亮/索引自动化)、OG 社交卡片
 

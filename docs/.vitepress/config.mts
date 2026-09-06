@@ -50,8 +50,9 @@ const archiveSidebar = [
 ]
 
 // 站点配置 —— 铁小微融媒体中心
-// 上线前需要改的三处:① sitemap.hostname 换正式域名;② head 里的 og:image;
-// ③ 主题色在 theme/custom.css 的 CSS 变量(当前为占位的"铁路红")。
+// 上线前还需要改的两处:① head 里的 og:image(品牌图确定后);
+// ② 主题色在 theme/custom.css 的 CSS 变量(当前为占位的"铁路红")。
+// sitemap.hostname 已同步为正式根域 txwrmtzx.top。
 export default defineConfig({
   lang: 'zh-CN',
   title: '铁小微融媒体中心',
@@ -74,8 +75,8 @@ export default defineConfig({
     noExternal: ['@nolebase/vitepress-plugin-highlight-targeted-heading']
   },
   sitemap: {
-    // 等新域名确定后替换(历史中的 deploy.yml 工作流可随时恢复使用)
-    hostname: 'https://tiexiaowei.example.com'
+    // 正式根域(与 docs/public/CNAME、GitHub Pages 自定义域名设置保持一致)
+    hostname: 'https://txwrmtzx.top'
   },
   vite: {
     plugins: [

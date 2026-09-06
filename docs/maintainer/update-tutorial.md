@@ -47,7 +47,7 @@ pnpm install
 | 维护者名单 | `data/maintainers.js` |
 | 招新横幅(开关与文案) | `data/siteBanner.js` |
 | 首页"站点导航"卡片 | `data/homeNav.js` |
-| 系统入口链接(成员端/报名/后台) | `appLinks.ts` |
+| 系统入口链接(成员端/报名) | `appLinks.ts` |
 
 ### 场景五:更新部门年册 / 职能页
 

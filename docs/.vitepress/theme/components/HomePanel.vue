@@ -17,7 +17,7 @@ import { homeNav } from '../../data/homeNav'
         </a>
       </div>
       <p class="home-panel-label app">系统入口</p>
-      <div class="home-panel-grid cols-3">
+      <div class="home-panel-grid cols-2">
         <a v-for="item in appLinks" :key="item.key" class="home-card" :href="item.url" target="_blank" rel="noopener">
           <span class="home-card-icon">{{ item.icon }}</span>
           <span class="home-card-name">{{ item.title }}</span>
@@ -55,6 +55,9 @@ import { homeNav } from '../../data/homeNav'
 .home-panel-grid.cols-4 {
   grid-template-columns: repeat(4, 1fr);
 }
+.home-panel-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
 .home-panel-grid.cols-3 {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -65,7 +68,7 @@ import { homeNav } from '../../data/homeNav'
 }
 @media (max-width: 640px) {
   .home-panel-grid.cols-4,
-  .home-panel-grid.cols-3 {
+  .home-panel-grid.cols-2 {
     grid-template-columns: 1fr;
   }
 }
