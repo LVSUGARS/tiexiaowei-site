@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { memberUrl } from './appLinks'
 import { GitChangelog, GitChangelogMarkdownSection } from '@nolebase/vitepress-plugin-git-changelog/vite'
 
-// 档案馆统一侧栏:/archive/ /activity/ /resources/ /library/ 四类路径共用
+// 档案馆统一侧栏:/archive/ /activity/ /resources/ /library/ /tags/ /stories/ 共用
 // 规则:侧栏只到"分组级"(年 / 类型),单篇文章与单个条目不进侧栏,走各库列表页
 const archiveSidebar = [
   { text: '档案馆介绍', link: '/archive/' },
@@ -11,6 +11,7 @@ const archiveSidebar = [
     collapsed: false,
     items: [
       { text: '总览与台账模板', link: '/activity/' },
+      { text: '年度总结 · 2026', link: '/activity/annual-2026' },
       {
         text: '2026',
         collapsed: false,
@@ -43,7 +44,9 @@ const archiveSidebar = [
       { text: '收录规范', link: '/library/spec' },
       { text: '校园号专栏', link: '/library/univs' }
     ]
-  }
+  },
+  { text: '主题标签', link: '/tags/' },
+  { text: '口述史', link: '/stories/' }
 ]
 
 // 站点配置 —— 铁小微融媒体中心
@@ -133,6 +136,24 @@ export default defineConfig({
       '/activity/': archiveSidebar,
       '/resources/': archiveSidebar,
       '/library/': archiveSidebar,
+      '/tags/': archiveSidebar,
+      '/stories/': archiveSidebar,
+      '/friends/': [
+        {
+          text: '关于',
+          collapsed: false,
+          items: [
+            { text: '中心简介', link: '/about/' },
+            { text: '全国荣誉', link: '/about/awards' },
+            { text: '友情链接', link: '/friends/' }
+          ]
+        },
+        {
+          text: '关注我们',
+          collapsed: false,
+          items: [{ text: '新媒体矩阵', link: '/about/matrix' }]
+        }
+      ],
       '/demo/': [
         {
           text: '默认主题试衣间',

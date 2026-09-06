@@ -2,9 +2,17 @@
 title: 档案馆
 ---
 
+<script setup>
+import RandomMemory from '../.vitepress/theme/components/RandomMemory.vue'
+</script>
+
 # 档案馆
 
 铁小微沉淀下来的所有东西都在这里,分为三大库。**左侧栏**可在三个库之间随时切换(可折叠分组),单篇内容通过各库列表页浏览,不会刷屏。
+
+<RandomMemory />
+
+> 没有目标地翻一翻,也是逛档案馆的正确姿势——每一页都曾被某个成员认真对待过。
 
 ## 🎪 活动存档
 

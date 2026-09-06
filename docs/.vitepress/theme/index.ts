@@ -7,6 +7,8 @@ import './custom.css'
 import HomePanel from './components/HomePanel.vue'
 import FeedbackLine from './components/FeedbackLine.vue'
 import AnnouncementBanner from './components/AnnouncementBanner.vue'
+import SeasonTerm from './components/SeasonTerm.vue'
+import NotFound from './components/NotFound.vue'
 
 export default {
   extends: DefaultTheme,
@@ -19,12 +21,16 @@ export default {
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {
+      // 首页 Hero 信息区之前插入节气彩蛋
+      'home-hero-info-before': () => h(SeasonTerm),
       // 首页 features 区位插入一体化面板(站点导航 + 系统入口)
       'home-features-after': () => h(HomePanel),
       // 每篇文档页脚前插入纠错行
       'doc-footer-before': () => h(FeedbackLine),
       // 整站底部插入招新季横幅(开关见 data/siteBanner.js)
-      'layout-bottom': () => h(AnnouncementBanner)
+      'layout-bottom': () => h(AnnouncementBanner),
+      // 404:这一页还没被归档
+      'not-found': () => h(NotFound)
     })
   }
 }
