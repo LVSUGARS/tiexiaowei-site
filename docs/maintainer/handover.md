@@ -36,3 +36,14 @@ title: 换届交接手册
 ## 3-2-1 备份约定
 
 资料三份副本:部门网盘(原始包)+ GitHub Releases(按年打包)+ 站点仓库(索引与精选)。每学期末核对一次。
+
+## 可选:迁移到 Cloudflare Pages(境内访问优化)
+
+当前站点部署在 GitHub Pages(自动部署,push 即发布)。如境内访问速度不理想,可加部署一份 Cloudflare Pages:
+
+1. 登录 Cloudflare → **Workers & Pages → Create → Pages → Connect to Git** → 选择本仓库
+2. 构建配置:框架预设选 **VitePress**;构建命令 `pnpm build`;输出目录 `docs/.vitepress/dist`
+3. 部署成功后获得 `*.pages.dev` 域名,可在 CF 里绑定自定义域名(如 `archive.lvsugars.cc.cd`)
+4. 注意:CF Pages 构建走根路径(无需 base 前缀),与 GitHub Pages 工作流里的 `--base` 互不干扰,两套部署可并存
+5. 稳定运行后,如需单轨:GitHub 仓库 Settings → Pages 关闭即可
+
