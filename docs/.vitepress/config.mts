@@ -74,8 +74,8 @@ export default defineConfig({
     noExternal: ['@nolebase/vitepress-plugin-highlight-targeted-heading']
   },
   sitemap: {
-    // 部署平台确定后替换为正式域名(候选:Cloudflare Pages,见交接手册)
-    hostname: 'https://tiexiaowei.example.com'
+    // GitHub Pages 实际地址(账号级自定义域名 + 项目子路径)
+    hostname: 'https://lvsugars.cc.cd/tiexiaowei-site'
   },
   vite: {
     plugins: [
