@@ -68,8 +68,8 @@ export default defineConfig({
     // og:image 待品牌图确定后补充: ['meta', { property: 'og:image', content: '/og.png' }]
   ],
   sitemap: {
-    // 账号级 Pages 自定义域名(项目页挂在其子路径下);换域名时同步更新
-    hostname: 'https://lvsugars.cc.cd/tiexiaowei-site'
+    // 部署平台确定后替换为正式域名(候选:Cloudflare Pages,见交接手册)
+    hostname: 'https://tiexiaowei.example.com'
   },
   vite: {
     plugins: [

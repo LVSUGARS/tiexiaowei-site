@@ -1,6 +1,6 @@
 # 铁小微融媒体中心站点 · 框架设计计划书
 
-> 版本 v0.9 · 日期 2026-09-06 · 起草:站点建设小组 · v0.9 变更:M4 部署完成——GitHub 仓库(LVSUGARS/tiexiaowei-site)+ GitHub Pages 上线(lvsugars.cc.cd/tiexiaowei-site),push 即自动部署
+> 版本 v0.9 · 日期 2026-09-06 · 起草:站点建设小组 · v0.9 变更:GitHub 仓库建立(LVSUGARS/tiexiaowei-site);~~GitHub Pages 部署~~(经确认撤销,部署平台由维护者另行决定,推荐方案见交接手册)
 
 ---
 
