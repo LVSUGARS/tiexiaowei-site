@@ -67,6 +67,8 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'website' }],
     // og:image 待品牌图确定后补充: ['meta', { property: 'og:image', content: '/og.png' }]
   ],
+  // 教程页会引用 http://localhost:5173,放行 localhost 形式的链接
+  ignoreDeadLinks: [/^https?:\/\/localhost/],
   sitemap: {
     // 部署平台确定后替换为正式域名(候选:Cloudflare Pages,见交接手册)
     hostname: 'https://tiexiaowei.example.com'
