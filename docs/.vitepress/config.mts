@@ -68,13 +68,12 @@ export default defineConfig({
     // og:image 待品牌图确定后补充: ['meta', { property: 'og:image', content: '/og.png' }]
   ],
   sitemap: {
-    // 占位域名,上线时替换为正式域名
-    hostname: 'https://tiexiaowei.example.com'
+    // GitHub Pages 项目页地址;换成自定义域名 / Cloudflare Pages 时同步更新
+    hostname: 'https://lvsugars.github.io/tiexiaowei-site'
   },
   vite: {
     plugins: [
-      // 页面历史(GitChangelog):仓库建立后,每页底部展示变更记录
-      // repoURL 为占位,GitHub 仓库建立后替换为真实地址
+      // 页面历史(GitChangelog):每页底部展示变更记录
       GitChangelog({
         repoURL: () => 'https://github.com/LVSUGARS/tiexiaowei-site'
       }),
