@@ -1,0 +1,16 @@
+{
+  "name": "tiexiaowei-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "南京铁道职业技术学院铁小微融媒体中心官方站(VitePress)",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "audit": "node scripts/audit-links.cjs"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4"
+  }
+}

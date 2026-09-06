@@ -1,0 +1,145 @@
+/* 品牌色占位:当前使用"铁路红"。拿到学校 VI 标准色后只需改这四个变量。 */
+:root {
+  --vp-c-brand-1: #b12b31;
+  --vp-c-brand-2: #c94b50;
+  --vp-c-brand-3: #8f2229;
+  --vp-c-brand-soft: rgba(177, 43, 49, 0.14);
+}
+
+.dark {
+  --vp-c-brand-1: #d4545a;
+  --vp-c-brand-2: #c94b50;
+  --vp-c-brand-3: #e07076;
+  --vp-c-brand-soft: rgba(212, 84, 90, 0.16);
+}
+
+/* 首页 hero 区微调 */
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #b12b31, #d4545a);
+}
+
+/* 全站纠错行(doc-footer-before 插槽) */
+.feedback-line {
+  margin: 8px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--vp-c-divider);
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+}
+.feedback-line a {
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+}
+
+/* 招新季横幅(layout-bottom 插槽) */
+.announcement-banner {
+  border-top: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-brand-soft);
+}
+.announcement-banner-inner {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  text-align: center;
+  font-size: 15px;
+}
+.announcement-banner a {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+/* ===== 内容增强组件(亮暗自适应) ===== */
+
+/* 行动面板:报名 / 投稿等 CTA 场景,给按钮一个"铺垫容器" */
+.cta-panel {
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 14px;
+  padding: 26px 30px;
+  margin: 24px 0;
+  background: linear-gradient(135deg, var(--vp-c-brand-soft), transparent 70%);
+}
+.cta-panel .cta-kicker {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--vp-c-brand-1);
+  text-transform: uppercase;
+}
+.cta-panel h3 {
+  margin: 4px 0 8px;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* 步骤条:流程说明 */
+ol.steps {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+}
+ol.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 22px 52px;
+}
+ol.steps li:last-child {
+  padding-bottom: 4px;
+}
+ol.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--vp-c-brand-1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+ol.steps li::after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 36px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--vp-c-divider);
+}
+ol.steps li:last-child::after {
+  display: none;
+}
+ol.steps li b {
+  font-size: 16px;
+}
+
+/* 数据亮点卡 */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.stat-card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 18px 16px;
+  text-align: center;
+}
+.stat-card .num {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--vp-c-brand-1);
+  line-height: 1.25;
+}
+.stat-card .label {
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  margin-top: 4px;
+}
