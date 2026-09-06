@@ -74,8 +74,8 @@ export default defineConfig({
     noExternal: ['@nolebase/vitepress-plugin-highlight-targeted-heading']
   },
   sitemap: {
-    // GitHub Pages 实际地址(账号级自定义域名 + 项目子路径)
-    hostname: 'https://lvsugars.cc.cd/tiexiaowei-site'
+    // 等新域名确定后替换(历史中的 deploy.yml 工作流可随时恢复使用)
+    hostname: 'https://tiexiaowei.example.com'
   },
   vite: {
     plugins: [

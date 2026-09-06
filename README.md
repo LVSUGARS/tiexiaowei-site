@@ -30,8 +30,8 @@ pnpm preview      # 预览构建产物
 
 ## 当前状态
 
-- ✅ 骨架、内容、GitHub 仓库、GitHub Pages 部署全部完成(每页可溯源)
-- ⏳ 可选:Cloudflare Pages 双部署(境内访问优化,步骤见交接手册)
+- ✅ 骨架、内容、GitHub 仓库全部完成(每页可溯源)
+- ⏳ 部署:待新域名确定后接入(GitHub Pages 工作流或 Cloudflare Pages,均见交接手册)
 - ⏳ M3 公众号数据接入(方案见 PLAN.md 第五节,目录表模板在 `data/`)
 - ⏳ 可选增强:Nolebase 增强插件(标题高亮/索引自动化)、OG 社交卡片
 
