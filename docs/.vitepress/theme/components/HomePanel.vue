@@ -30,10 +30,7 @@ import { homeNav } from '../../data/homeNav'
 
 <style scoped>
 .home-panel {
-  margin-top: 8px;
-  padding: 56px 24px 64px;
-  background: linear-gradient(180deg, var(--vp-c-brand-soft), transparent 55%);
-  border-top: 1px solid var(--vp-c-divider);
+  padding: 12px 24px 64px;
 }
 .home-panel-inner {
   max-width: 1152px;
