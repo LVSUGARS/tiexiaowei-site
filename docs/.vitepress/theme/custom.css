@@ -221,44 +221,52 @@ ol.steps li b {
   margin-top: 2px;
 }
 
-/* ===== 表格美化(全站:圆角 + 品牌色表头 + 悬停高亮) ===== */
+/* ===== 表格美化 v2(全站:大圆角 + 品牌色表头 + 斑马纹 + 悬停品牌底) ===== */
 .vp-doc table {
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
   margin: 16px 0;
+  font-size: 14px;
+  overflow: hidden;
 }
-.vp-doc th,
-.vp-doc td {
+.vp-doc table th,
+.vp-doc table td {
   border: none;
   border-bottom: 1px solid var(--vp-c-divider);
-  padding: 11px 16px;
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
 }
-.vp-doc thead th {
+.vp-doc table thead th {
   background: var(--vp-c-brand-soft);
   color: var(--vp-c-brand-1);
+  font-weight: 600;
   border-bottom: 1px solid var(--vp-c-brand-1);
 }
-.vp-doc tbody tr {
+.vp-doc table tbody tr {
   transition: background-color 0.2s;
 }
-.vp-doc tbody tr:hover {
+.vp-doc table tbody tr:nth-child(even) {
   background: var(--vp-c-bg-soft);
 }
-.vp-doc tbody tr:last-child td {
+.vp-doc table tbody tr:hover {
+  background: var(--vp-c-brand-soft);
+}
+.vp-doc table tbody tr:last-child td {
   border-bottom: none;
 }
-.vp-doc thead th:first-child {
-  border-top-left-radius: 10px;
+.vp-doc table thead th:first-child {
+  border-top-left-radius: 12px;
 }
-.vp-doc thead th:last-child {
-  border-top-right-radius: 10px;
+.vp-doc table thead th:last-child {
+  border-top-right-radius: 12px;
 }
-.vp-doc tbody tr:last-child td:first-child {
-  border-bottom-left-radius: 10px;
+.vp-doc table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
 }
-.vp-doc tbody tr:last-child td:last-child {
-  border-bottom-right-radius: 10px;
+.vp-doc table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
 }
 
 /* ===== 行内链接:下划线透明化,悬停淡入(不改变排版) ===== */
