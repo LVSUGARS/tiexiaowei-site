@@ -2,22 +2,18 @@
 title: 新媒体矩阵
 ---
 
-<script setup>
-import { VPFeatures } from 'vitepress/theme'
-</script>
-
 # 新媒体矩阵
 
 铁小微融媒体中心参与运营学校的四端新媒体矩阵,欢迎关注:
 
-<VPFeatures :features="[
-  { icon: '💬', title: '微信公众号', details: '校园资讯、招新信息、文化内容。微信内搜索「南京铁道职业技术学院」,或扫码关注(二维码 🚧 待补)。' },
-  { icon: '🧣', title: '官方微博', details: '快讯发布与话题互动。账号:南京铁道职业技术学院。', link: 'https://weibo.com/u/2123734285', linkText: '微博主页' },
-  { icon: '🎬', title: '抖音', details: '短视频、校园日常。抖音号:nty001,简介「讲好南铁故事」。', link: 'https://www.douyin.com/user/MS4wLjABAAAAKJ1VD29cVTd23klftwqLCyldwXH7UTQXzxgQGBsAd_Y', linkText: '抖音主页' },
-  { icon: '🎓', title: '中国大学生在线 · 校园号', details: '深度报道与专题内容。', link: '/library/univs', linkText: '校园号专栏' }
-]" />
+<div class="card-grid cols-2">
+  <a class="card" href="https://weibo.com/u/2123734285" target="_blank" rel="noopener"><span class="icon">🧣</span><span><span class="name">官方微博</span><span class="desc">快讯发布与话题互动 · 账号:南京铁道职业技术学院</span></span></a>
+  <a class="card" href="https://www.douyin.com/user/MS4wLjABAAAAKJ1VD29cVTd23klftwqLCyldwXH7UTQXzxgQGBsAd_Y" target="_blank" rel="noopener"><span class="icon">🎬</span><span><span class="name">抖音</span><span class="desc">短视频、校园日常 · 抖音号:nty001</span></span></a>
+  <a class="card" href="/library/univs"><span class="icon">🎓</span><span><span class="name">中国大学生在线 · 校园号</span><span class="desc">深度报道与专题内容 · 专栏</span></span></a>
+  <a class="card"><span class="icon">💬</span><span><span class="name">微信公众号</span><span class="desc">微信内搜索「南京铁道职业技术学院」· 二维码 🚧 待补</span></span></a>
+</div>
 
-> 🚧 微信公众号没有网页版主页,常规做法是展示二维码——图片素材待内部提供后,替换上方卡片文案。
+> 说明:微信公众号没有网页版主页,上方卡片不可点击;二维码图片提供后可在卡片内展示。
 
 ## 关于"铁小微"品牌
 
