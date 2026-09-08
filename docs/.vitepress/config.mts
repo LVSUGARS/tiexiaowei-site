@@ -88,15 +88,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      {
-        text: '关于我们',
-        items: [
-          { text: '中心简介', link: '/about/' },
-          { text: '全国荣誉', link: '/about/awards' },
-          { text: '新媒体矩阵', link: '/about/matrix' },
-          { text: '友情链接', link: '/friends/' }
-        ]
-      },
+      { text: '关于', link: '/about/' },
       {
         text: '部门',
         items: [
@@ -117,6 +109,7 @@ export default defineConfig({
           { text: '口述史', link: '/stories/' }
         ]
       },
+      { text: '友情链接', link: '/friends/' },
       { text: '加入我们', link: '/guide/' },
       { text: '成员端 ↗', link: memberUrl }
     ],
