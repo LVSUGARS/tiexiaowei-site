@@ -66,7 +66,15 @@ export default defineConfig({
     ['meta', { property: 'og:title', content: '铁小微融媒体中心' }],
     ['meta', { property: 'og:description', content: '记录校园日常,传播铁路文化 —— 四端一体的校园融媒团队' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    // og:image 待品牌图确定后补充: ['meta', { property: 'og:image', content: '/og.png' }]
+    ['meta', { property: 'og:url', content: 'https://txwrmtzx.top/' }],
+    ['meta', { property: 'og:image', content: 'https://txwrmtzx.top/og.png' }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+    ['meta', { property: 'og:image:type', content: 'image/png' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: '铁小微融媒体中心' }],
+    ['meta', { name: 'twitter:description', content: '记录校园日常,传播铁路文化 —— 四端一体的校园融媒团队' }],
+    ['meta', { name: 'twitter:image', content: 'https://txwrmtzx.top/og.png' }]
   ],
   // 教程页会引用 http://localhost:5173,放行 localhost 形式的链接
   ignoreDeadLinks: [/^https?:\/\/localhost/],
