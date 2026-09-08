@@ -4,6 +4,7 @@ date: 2022-01-01
 type: 官方活动
 departments: [编创中心]
 published: true
+tags: [铁路科普, 社区教育]
 ---
 
 # "铁小微"带你看江苏铁路教育馆

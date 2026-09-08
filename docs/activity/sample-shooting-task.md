@@ -2,8 +2,9 @@
 title: 示例 · 迎新晚会拍摄(未发布)
 date: 2026-09-20
 type: 拍摄任务
-departments: [影像部]
+departments: [视频部, 摄影部]
 published: false
+tags: [迎新, 拍摄任务]
 outputs:
   - 素材包: (内部网盘,链接不公开)
   - 成片: 待剪辑

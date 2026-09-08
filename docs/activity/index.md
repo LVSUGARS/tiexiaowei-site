@@ -5,6 +5,7 @@ title: 活动存档
 <script setup>
 import HistoryToday from '../.vitepress/theme/components/HistoryToday.vue'
 import ActivityTimeline from '../.vitepress/theme/components/ActivityTimeline.vue'
+import PhotoWall from '../.vitepress/theme/components/PhotoWall.vue'
 </script>
 
 # 活动存档 —— 每场必录的工作台账
@@ -16,14 +17,20 @@ import ActivityTimeline from '../.vitepress/theme/components/ActivityTimeline.vu
 ## 精选活动
 
 <div class="card-grid cols-2">
-  <a class="card" href="/activity/2022-vocational-week"><span class="icon">🚂</span><span><span class="name">职教周铁路科普短视频</span><span class="desc">与文化教育中心联合制作 · 2022-05</span></span></a>
-  <a class="card" href="/activity/railway-museum"><span class="icon">🏛️</span><span><span class="name">铁小微带你看江苏铁路教育馆</span><span class="desc">9 批近 500 名中小学生的社区研学</span></span></a>
-  <a class="card" href="/activity/sample-shooting-task"><span class="icon">🎬</span><span><span class="name">示例 · 迎新晚会拍摄</span><span class="desc">未发布拍摄任务的台账样例</span></span></a>
+  <a class="card" href="/activity/2022-vocational-week"><span class="card-cover" style="--cover-hue: 227">🚂</span><span><span class="name">职教周铁路科普短视频<em class="card-badge">官方活动</em></span><span class="desc">与文化教育中心联合制作 · 2022-05</span></span></a>
+  <a class="card" href="/activity/railway-museum"><span class="card-cover" style="--cover-hue: 150">🏛️</span><span><span class="name">铁小微带你看江苏铁路教育馆<em class="card-badge">官方活动</em></span><span class="desc">9 批近 500 名中小学生的社区研学</span></span></a>
+  <a class="card" href="/activity/sample-shooting-task"><span class="card-cover" style="--cover-hue: 35">🎬</span><span><span class="name">示例 · 迎新晚会拍摄<em class="card-badge">拍摄任务</em></span><span class="desc">未发布拍摄任务的台账样例</span></span></a>
 </div>
 
 ## 时间轴
 
 <ActivityTimeline />
+
+## 精选瞬间
+
+<PhotoWall />
+
+> 🚧 当前为占位瓦片——真实照片(设备 / 幕后 / 铁路空镜,避开人脸规避肖像问题)到位后,编辑 `data/photoWall.js` 即可成墙。
 
 ## 台账模板(每场活动一页)
 

@@ -2,6 +2,10 @@
 title: 资料库总览
 ---
 
+<script setup>
+import ResourcesList from '../.vitepress/theme/components/ResourcesList.vue'
+</script>
+
 # 资料库
 
 中心沉淀的可复用资源统一收录在这里:**素材包、学习资料、培训产出**,条目模式统一为"几张图 + 一段说明 + 网盘链接"。
@@ -16,9 +20,9 @@ title: 资料库总览
 
 ## 条目列表
 
-- [条目示例 · 相机基础学习路线](/resources/sample-study-material)(示例)
+<ResourcesList />
 
-🚧 更多条目由成员按[收录指南](/resources/contribute)持续添加;列表自动化(按类型/来源筛选)在条目积累后配置。
+更多条目由成员按[收录指南](/resources/contribute)持续添加;列表会随资料条目自动更新。
 
 ## 权限分级(重要)
 

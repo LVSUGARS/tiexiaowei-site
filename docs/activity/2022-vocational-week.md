@@ -4,6 +4,7 @@ date: 2022-05-13
 type: 官方活动
 departments: [编创中心]
 published: true
+tags: [铁路科普, 职教周]
 ---
 
 # 2022 职教周 · 铁路科普系列短视频

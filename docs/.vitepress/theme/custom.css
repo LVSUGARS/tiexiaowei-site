@@ -13,9 +13,12 @@
   --vp-c-brand-soft: rgba(124, 147, 255, 0.16);
 }
 
-/* 首页一体化背板:hero 与内容面板共享同一片渐变,无断缝 */
+/* 首页一体化背板:hero 与内容面板共享同一片渐变,无断缝
+   叠加节气氛围色(--seasonal-hue 由 SeasonTerm 组件水合后设置,默认回到品牌蓝) */
 .VPHome {
-  background: linear-gradient(180deg, var(--vp-c-brand-soft) 0, transparent 1100px);
+  background:
+    radial-gradient(900px 420px at 72% -60px, hsla(var(--seasonal-hue, 227), 80%, 55%, 0.10), transparent 70%),
+    linear-gradient(180deg, var(--vp-c-brand-soft) 0, transparent 1100px);
 }
 
 /* Hero 标题:多段渐变 + 缓慢流光 */
@@ -219,6 +222,35 @@ ol.steps li b {
   font-size: 14px;
   color: var(--vp-c-text-2);
   margin-top: 2px;
+}
+
+/* 卡片渐变封面与类型角标(精选活动卡等;--cover-hue 可逐卡指定) */
+.card-grid .card .card-cover {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    hsla(var(--cover-hue, 227), 80%, 60%, 0.95),
+    hsla(var(--cover-hue, 227), 75%, 45%, 0.95)
+  );
+}
+.card-grid .card .card-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  vertical-align: 2px;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
 }
 
 /* ===== 表格美化 v2(全站:大圆角 + 品牌色表头 + 斑马纹 + 悬停品牌底) ===== */
