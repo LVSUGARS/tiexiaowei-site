@@ -8,7 +8,10 @@ title: 主题标签
 
 <script setup>
 import TagsIndex from '../.vitepress/theme/components/TagsIndex.vue'
+import ArchiveSwitch from '../.vitepress/theme/components/ArchiveSwitch.vue'
 </script>
+
+<ArchiveSwitch />
 
 <TagsIndex />
 

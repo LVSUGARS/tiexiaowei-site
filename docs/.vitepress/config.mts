@@ -3,7 +3,7 @@ import { memberUrl } from './appLinks'
 import { GitChangelog, GitChangelogMarkdownSection } from '@nolebase/vitepress-plugin-git-changelog/vite'
 
 // 档案馆统一侧栏:/archive/ /activity/ /resources/ /library/ /tags/ /stories/ 共用
-// 规则:侧栏只到"分组级"(年 / 类型),单篇文章与单个条目不进侧栏,走各库列表页
+// 规则:侧栏只到库与年份分组,单篇活动、资料和文章只从各库列表页进入
 const archiveSidebar = [
   { text: '档案馆介绍', link: '/archive/' },
   {
@@ -12,19 +12,8 @@ const archiveSidebar = [
     items: [
       { text: '总览与台账模板', link: '/activity/' },
       { text: '年度总结 · 2026', link: '/activity/annual-2026' },
-      {
-        text: '2026',
-        collapsed: false,
-        items: [{ text: '示例 · 迎新晚会拍摄(未发布)', link: '/activity/sample-shooting-task' }]
-      },
-      {
-        text: '2022',
-        collapsed: true,
-        items: [
-          { text: '职教周铁路科普短视频', link: '/activity/2022-vocational-week' },
-          { text: '江苏铁路教育馆研学', link: '/activity/railway-museum' }
-        ]
-      }
+      { text: '2026', link: '/activity/#2026' },
+      { text: '2022', link: '/activity/#2022' }
     ]
   },
   {
@@ -32,15 +21,14 @@ const archiveSidebar = [
     collapsed: true,
     items: [
       { text: '资料库总览', link: '/resources/' },
-      { text: '收录指南', link: '/resources/contribute' },
-      { text: '条目示例 · 学习资料', link: '/resources/sample-study-material' }
+      { text: '收录指南', link: '/resources/contribute' }
     ]
   },
   {
     text: '文章库',
     collapsed: true,
     items: [
-      { text: '建设状态', link: '/library/' },
+      { text: '文章目录', link: '/library/' },
       { text: '收录规范', link: '/library/spec' },
       { text: '校园号专栏', link: '/library/univs' }
     ]
@@ -100,11 +88,36 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '关于', link: '/about/' },
-      { text: '部门', link: '/department/' },
-      { text: '档案馆', link: '/archive/' },
-      { text: '招新指南', link: '/guide/' },
-      { text: '维护者', link: '/maintainer/' },
+      {
+        text: '关于我们',
+        items: [
+          { text: '中心简介', link: '/about/' },
+          { text: '全国荣誉', link: '/about/awards' },
+          { text: '新媒体矩阵', link: '/about/matrix' },
+          { text: '友情链接', link: '/friends/' }
+        ]
+      },
+      {
+        text: '部门',
+        items: [
+          { text: '部门总览', link: '/department/' },
+          { text: '部门职能', link: '/department/video' },
+          { text: '2026 年册', link: '/department/2026' },
+          { text: '2025 年册', link: '/department/2025' }
+        ]
+      },
+      {
+        text: '档案馆',
+        items: [
+          { text: '档案馆总览', link: '/archive/' },
+          { text: '活动存档', link: '/activity/' },
+          { text: '资料库', link: '/resources/' },
+          { text: '文章库', link: '/library/' },
+          { text: '主题标签', link: '/tags/' },
+          { text: '口述史', link: '/stories/' }
+        ]
+      },
+      { text: '加入我们', link: '/guide/' },
       { text: '成员端 ↗', link: memberUrl }
     ],
     sidebar: {
@@ -237,7 +250,7 @@ export default defineConfig({
     lightModeSwitchTitle: '切换到浅色模式',
     darkModeSwitchTitle: '切换到深色模式',
     footer: {
-      message: '除特别声明外,本站文字内容采用 CC BY-NC-SA 4.0 授权;站内图片、视频版权归原作者所有。',
+      message: '除特别声明外,本站文字内容采用 CC BY-NC-SA 4.0 授权;站内图片、视频版权归原作者所有。<br><a href="/maintainer/">站点维护</a>',
       copyright: 'Copyright © 2025-2026 铁小微融媒体中心 · 南京铁道职业技术学院党委宣传部'
     }
   }

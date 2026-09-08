@@ -17,7 +17,7 @@ const byYear = (y) => activities.value.filter((a) => a.date.slice(0, 4) === y)
 <template>
   <div>
     <div v-for="y in years" :key="y">
-      <h3 class="tl-year">{{ y }}</h3>
+      <h3 :id="y" class="tl-year">{{ y }}</h3>
       <div class="tl">
         <a v-for="a in byYear(y)" :key="a.url" class="tl-item" :href="a.url">
           <span class="tl-date">

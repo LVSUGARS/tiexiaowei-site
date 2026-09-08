@@ -4,11 +4,14 @@ title: 资料库总览
 
 <script setup>
 import ResourcesList from '../.vitepress/theme/components/ResourcesList.vue'
+import ArchiveSwitch from '../.vitepress/theme/components/ArchiveSwitch.vue'
 </script>
 
 # 资料库
 
 中心沉淀的可复用资源统一收录在这里:**素材包、学习资料、培训产出**,条目模式统一为"几张图 + 一段说明 + 网盘链接"。
+
+<ArchiveSwitch />
 
 ## 资料分类
 

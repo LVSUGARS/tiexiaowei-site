@@ -4,11 +4,14 @@ title: 档案馆
 
 <script setup>
 import RandomMemory from '../.vitepress/theme/components/RandomMemory.vue'
+import ArchiveSwitch from '../.vitepress/theme/components/ArchiveSwitch.vue'
 </script>
 
 # 档案馆
 
-铁小微沉淀下来的所有东西都在这里,分为三大库。**左侧栏**可在三个库之间随时切换(可折叠分组),单篇内容通过各库列表页浏览,不会刷屏。
+铁小微沉淀下来的所有东西都在这里,分为三大库。单篇内容统一从各库列表页浏览,侧栏只保留库与年份分组。
+
+<ArchiveSwitch />
 
 <RandomMemory />
 
