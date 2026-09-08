@@ -2,15 +2,9 @@
 title: 口述史
 ---
 
-<script setup>
-import ArchiveSwitch from '../.vitepress/theme/components/ArchiveSwitch.vue'
-</script>
-
 # 口述史
 
 > 档案馆最柔软的部分:推文记录"我们做了什么",口述史记录"那些没写进推文的晚上"。每年采写两三篇,就是给未来的珍贵史料。
-
-<ArchiveSwitch />
 
 ## 采访提纲(模板)
 

@@ -1,6 +1,5 @@
 <script setup>
-// 首页一体化面板:上半区"站点导航" + 下半区"系统入口",共用一个背板
-// 站点导航数据在 data/homeNav.js;系统入口数据在 data 旁的 appLinks.ts
+// 首页一体化面板:精选内容 + 系统入口,不重复完整顶栏目录
 import { appLinks } from '../../appLinks'
 import { homeNav } from '../../data/homeNav'
 </script>
@@ -8,8 +7,8 @@ import { homeNav } from '../../data/homeNav'
 <template>
   <section class="home-panel">
     <div class="home-panel-inner">
-      <p class="home-panel-label">站点导航</p>
-      <div class="home-panel-grid cols-4">
+      <p class="home-panel-label">精选内容</p>
+      <div class="home-panel-grid cols-3">
         <a v-for="item in homeNav" :key="item.title" class="home-card" :href="item.link">
           <span class="home-card-icon">{{ item.icon }}</span>
           <span class="home-card-name">{{ item.title }}</span>
@@ -62,11 +61,13 @@ import { homeNav } from '../../data/homeNav'
   grid-template-columns: repeat(3, 1fr);
 }
 @media (max-width: 960px) {
+  .home-panel-grid.cols-3,
   .home-panel-grid.cols-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 640px) {
+  .home-panel-grid.cols-3,
   .home-panel-grid.cols-4,
   .home-panel-grid.cols-2 {
     grid-template-columns: 1fr;

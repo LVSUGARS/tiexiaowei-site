@@ -2,10 +2,36 @@ import { defineConfig } from 'vitepress'
 import { memberUrl } from './appLinks'
 import { GitChangelog, GitChangelogMarkdownSection } from '@nolebase/vitepress-plugin-git-changelog/vite'
 
-// 档案馆统一侧栏:/archive/ /activity/ /resources/ /library/ /tags/ /stories/ 共用
-// 规则:侧栏只到库与年份分组,单篇活动、资料和文章只从各库列表页进入
+const aboutSidebar = [
+  {
+    text: '中心概况',
+    collapsed: false,
+    items: [
+      { text: '中心简介', link: '/about/' },
+      { text: '全国荣誉', link: '/about/awards' }
+    ]
+  },
+  {
+    text: '关注我们',
+    collapsed: false,
+    items: [{ text: '新媒体矩阵', link: '/about/matrix' }]
+  },
+  {
+    text: '合作与链接',
+    collapsed: true,
+    items: [{ text: '友情链接', link: '/friends/' }]
+  }
+]
+
 const archiveSidebar = [
   { text: '档案馆介绍', link: '/archive/' },
+  { text: '资料库', link: '/resources/' },
+  { text: '文章库', link: '/library/' },
+  { text: '主题标签', link: '/tags/' },
+  { text: '口述史', link: '/stories/' }
+]
+
+const activitySidebar = [
   {
     text: '活动存档',
     collapsed: false,
@@ -15,26 +41,30 @@ const archiveSidebar = [
       { text: '2026', link: '/activity/#2026' },
       { text: '2022', link: '/activity/#2022' }
     ]
-  },
+  }
+]
+
+const resourcesSidebar = [
   {
     text: '资料库',
-    collapsed: true,
+    collapsed: false,
     items: [
       { text: '资料库总览', link: '/resources/' },
       { text: '收录指南', link: '/resources/contribute' }
     ]
-  },
+  }
+]
+
+const librarySidebar = [
   {
     text: '文章库',
-    collapsed: true,
+    collapsed: false,
     items: [
       { text: '文章目录', link: '/library/' },
       { text: '收录规范', link: '/library/spec' },
       { text: '校园号专栏', link: '/library/univs' }
     ]
-  },
-  { text: '主题标签', link: '/tags/' },
-  { text: '口述史', link: '/stories/' }
+  }
 ]
 
 // 站点配置 —— 铁小微融媒体中心
@@ -89,46 +119,14 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '关于', link: '/about/' },
-      {
-        text: '部门',
-        items: [
-          { text: '部门总览', link: '/department/' },
-          { text: '部门职能', link: '/department/video' },
-          { text: '2026 年册', link: '/department/2026' },
-          { text: '2025 年册', link: '/department/2025' }
-        ]
-      },
-      {
-        text: '档案馆',
-        items: [
-          { text: '档案馆总览', link: '/archive/' },
-          { text: '活动存档', link: '/activity/' },
-          { text: '资料库', link: '/resources/' },
-          { text: '文章库', link: '/library/' },
-          { text: '主题标签', link: '/tags/' },
-          { text: '口述史', link: '/stories/' }
-        ]
-      },
-      { text: '友情链接', link: '/friends/' },
+      { text: '部门', link: '/department/' },
+      { text: '活动', link: '/activity/' },
+      { text: '档案馆', link: '/archive/' },
       { text: '加入我们', link: '/guide/' },
       { text: '成员端 ↗', link: memberUrl }
     ],
     sidebar: {
-      '/about/': [
-        {
-          text: '中心概况',
-          collapsed: false,
-          items: [
-            { text: '中心简介', link: '/about/' },
-            { text: '全国荣誉', link: '/about/awards' }
-          ]
-        },
-        {
-          text: '关注我们',
-          collapsed: false,
-          items: [{ text: '新媒体矩阵', link: '/about/matrix' }]
-        }
-      ],
+      '/about/': aboutSidebar,
       '/department/': [
         {
           text: '部门职能',
@@ -153,27 +151,12 @@ export default defineConfig({
         }
       ],
       '/archive/': archiveSidebar,
-      '/activity/': archiveSidebar,
-      '/resources/': archiveSidebar,
-      '/library/': archiveSidebar,
-      '/tags/': archiveSidebar,
-      '/stories/': archiveSidebar,
-      '/friends/': [
-        {
-          text: '关于',
-          collapsed: false,
-          items: [
-            { text: '中心简介', link: '/about/' },
-            { text: '全国荣誉', link: '/about/awards' },
-            { text: '友情链接', link: '/friends/' }
-          ]
-        },
-        {
-          text: '关注我们',
-          collapsed: false,
-          items: [{ text: '新媒体矩阵', link: '/about/matrix' }]
-        }
-      ],
+      '/activity/': activitySidebar,
+      '/resources/': resourcesSidebar,
+      '/library/': librarySidebar,
+      '/tags/': [{ text: '主题标签', link: '/tags/' }],
+      '/stories/': [{ text: '口述史', link: '/stories/' }],
+      '/friends/': aboutSidebar,
       '/demo/': [
         {
           text: '默认主题试衣间',

@@ -6,14 +6,11 @@ title: 活动存档
 import HistoryToday from '../.vitepress/theme/components/HistoryToday.vue'
 import ActivityTimeline from '../.vitepress/theme/components/ActivityTimeline.vue'
 import PhotoWall from '../.vitepress/theme/components/PhotoWall.vue'
-import ArchiveSwitch from '../.vitepress/theme/components/ArchiveSwitch.vue'
 </script>
 
 # 活动存档 —— 每场必录的工作台账
 
 活动存档不等于作品展示:**每一场活动都记录在案,包括没有发布到任何平台的拍摄任务**。是否发布只是状态字段,不是收录门槛。
-
-<ArchiveSwitch />
 
 <HistoryToday />
 

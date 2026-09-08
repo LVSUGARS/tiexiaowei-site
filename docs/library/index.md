@@ -4,14 +4,11 @@ title: 文章库
 
 <script setup>
 import ArticleList from '../.vitepress/theme/components/ArticleList.vue'
-import ArchiveSwitch from '../.vitepress/theme/components/ArchiveSwitch.vue'
 </script>
 
 # 文章库
 
 文章库是本站的核心特色功能:把**公众号、校园号等各平台**发布的内容全量归档到站内,让每一届的作品都可检索、可传承。中国大学生在线校园号专栏也已并入本板块(见侧栏)。
-
-<ArchiveSwitch />
 
 ## 建设状态
 
