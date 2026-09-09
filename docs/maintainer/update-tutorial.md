@@ -28,8 +28,8 @@ pnpm install
 ### 场景一:新增一场活动
 
 1. 复制 `docs/activity/sample-shooting-task.md`,改名为新活动(英文/拼音,如 `2026-sports-meeting.md`),填好 frontmatter 与正文
-2. 打开 `docs/.vitepress/data/activityIndex.js`,**追加一条**(日期 / 标题 / 链接)——时间轴、"历史上的今天"、随机回忆三处自动生效
-3. 在 `config.mts` 侧栏的对应年份分组里登记链接
+2. 不需要手工维护时间轴或列表:构建时会扫描 `docs/activity/*.md` 的 frontmatter,时间轴与"历史上的今天"自动生效
+3. 单篇活动不登记到侧栏;年份入口只在 `config.mts` 的活动分组中维护
 
 ### 场景二:收录一篇公众号文章
 
@@ -46,7 +46,7 @@ pnpm install
 | --- | --- |
 | 维护者名单 | `data/maintainers.js` |
 | 招新横幅(开关与文案) | `data/siteBanner.js` |
-| 首页"站点导航"卡片 | `data/homeNav.js` |
+| 首页"精选内容"卡片 | `data/homeNav.js` |
 | 系统入口链接(成员端/报名) | `appLinks.ts` |
 
 ### 场景五:更新部门年册 / 职能页

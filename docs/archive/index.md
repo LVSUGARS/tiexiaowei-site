@@ -8,7 +8,7 @@ import RandomMemory from '../.vitepress/theme/components/RandomMemory.vue'
 
 # 档案馆
 
-铁小微沉淀下来的所有东西都在这里,分为三大库。单篇内容统一从各库列表页浏览,侧栏只保留库与年份分组。
+铁小微沉淀下来的内容从四个入口进入:资料、文章、主题标签和口述史。单篇内容统一从各库列表页浏览,侧栏只保留栏目与年份分组。
 
 <RandomMemory />
 
@@ -16,7 +16,7 @@ import RandomMemory from '../.vitepress/theme/components/RandomMemory.vue'
 
 ## 🎪 活动存档
 
-每场必录的工作台账——包括没有公开发布的拍摄任务。是否发布只是状态,不是收录门槛。
+活动工作台账是档案馆的关联入口:每场必录,包括没有公开发布的拍摄任务。它记录“发生过什么”,四个档案入口负责“留下了什么”。
 
 - [总览与台账模板](/activity/)
 - 已归档:[2022 职教周铁路科普短视频](/activity/2022-vocational-week) · [江苏铁路教育馆研学](/activity/railway-museum) · [示例 · 迎新晚会拍摄](/activity/sample-shooting-task)
@@ -36,6 +36,16 @@ import RandomMemory from '../.vitepress/theme/components/RandomMemory.vue'
 - [收录规范(目录表 schema)](/library/spec)
 - [校园号专栏](/library/univs)
 
----
+## 🏷️ 主题标签
 
-🚧 各库"最近更新"自动化展示将在数据接入后(M3)配置;侧栏分组届时也由条目 frontmatter 自动生成。
+把活动和资料串起来的检索卡片,按 frontmatter 中的 `tags` 自动聚合。
+
+- [主题标签索引](/tags/)
+
+## 🎙️ 口述史
+
+记录成员经验与换届记忆的长期栏目,当前提供采访提纲和篇目入口。
+
+- [口述史栏目](/stories/)
+
+资料库、文章库、标签索引和活动时间轴已接入构建期自动化;公众号原始 HTML 和真实口述史内容仍需后续内容生产与授权。

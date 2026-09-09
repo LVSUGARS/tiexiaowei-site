@@ -10,7 +10,7 @@ import { maintainers, contributors } from '../.vitepress/data/maintainers'
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>站点维护人员</template>
-    <template #lead>这座档案馆由当届成员轮值维护,换届交接有完整手册。页面结构复刻自 <a href="https://whudays.org/maintainer/">WHUDAYS 维护者页</a>——同样由学生团队运营的存档站。</template>
+    <template #lead>这座档案馆由当届成员轮值维护,换届交接有完整手册。页面参考了 <a href="https://whudays.org/maintainer/">WHUDAYS 维护者页</a>的公开存档实践,具体内容和维护规则以铁小微自身需要为准。</template>
   </VPTeamPageTitle>
   <VPTeamPageSection>
     <template #title>日常维护</template>

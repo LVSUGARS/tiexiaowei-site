@@ -2,18 +2,9 @@
 // 首页 Hero 上方的节气彩蛋:链接《二十四节气》获奖专题
 // 色相随节气微调:徽章即时着色,整页背板的水合后微调由 onMounted 设置全局变量
 import { computed, onMounted } from 'vue'
-import { solarTerms } from '../../data/solarTerms'
+import { getCurrentSolarTerm } from '../../data/solarTerms'
 
-const term = computed(() => {
-  const now = new Date()
-  const mmdd = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
-  const sorted = [...solarTerms].sort((a, b) => a.md.localeCompare(b.md))
-  let current = sorted[sorted.length - 1] // 岁末年初兜底:冬至
-  for (const t of sorted) {
-    if (t.md <= mmdd) current = t
-  }
-  return current
-})
+const term = computed(() => getCurrentSolarTerm())
 
 // 水合后把节气色相挂到根元素,首页背板的渐变随之微调
 onMounted(() => {

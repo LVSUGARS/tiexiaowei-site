@@ -60,4 +60,4 @@ outputs:
 
 ## 收录与自动化
 
-<VPBadge type="warning">补录中</VPBadge> 时间轴与"历史上的今天"由 `activityIndex.data.js` **自动扫描** `docs/activity/*.md` 的 frontmatter 生成——**新增活动只需新建 md 页面**,无需登记任何列表。更多列表页自动化(资料库/文章库)按 M3 计划推进。
+<VPBadge type="tip">自动更新</VPBadge> 时间轴与"历史上的今天"由 `activityIndex.data.js` **自动扫描** `docs/activity/*.md` 的 frontmatter 生成——**新增活动只需新建 md 页面**,无需登记任何列表。资料库、标签索引和文章目录也分别由各自数据源在构建时更新。

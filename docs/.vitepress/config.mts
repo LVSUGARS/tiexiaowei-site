@@ -68,9 +68,8 @@ const librarySidebar = [
 ]
 
 // 站点配置 —— 铁小微融媒体中心
-// 上线前还需要改的两处:① head 里的 og:image(品牌图确定后);
-// ② 主题色在 theme/custom.css 的 CSS 变量(当前为占位的"铁路红")。
-// sitemap.hostname 已同步为正式根域 txwrmtzx.top。
+// 顶栏只放一级直达入口;友情链接收纳在关于侧栏,维护者从页脚进入。
+// sitemap.hostname 与 docs/public/CNAME 保持为正式根域 txwrmtzx.top。
 export default defineConfig({
   lang: 'zh-CN',
   title: '铁小微融媒体中心',

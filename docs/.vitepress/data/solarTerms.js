@@ -27,3 +27,28 @@ export const solarTerms = [
   { name: '大雪', md: '12-07', emoji: '🌨️', hue: 230 },
   { name: '冬至', md: '12-21', emoji: '🥟', hue: 225 }
 ]
+
+// 用北京时间月日计算当前节气,避免访客设备时区在零点附近造成错位。
+export function getBeijingMonthDay(date = new Date()) {
+  const parts = new Intl.DateTimeFormat('zh-CN', {
+    timeZone: 'Asia/Shanghai',
+    month: '2-digit',
+    day: '2-digit'
+  }).formatToParts(date)
+  const month = parts.find((part) => part.type === 'month')?.value
+  const day = parts.find((part) => part.type === 'day')?.value
+  return `${month}-${day}`
+}
+
+export function getSolarTermForMonthDay(mmdd) {
+  const sorted = [...solarTerms].sort((a, b) => a.md.localeCompare(b.md))
+  let current = sorted[sorted.length - 1] // 岁末年初兜底:冬至
+  for (const term of sorted) {
+    if (term.md <= mmdd) current = term
+  }
+  return current
+}
+
+export function getCurrentSolarTerm(date = new Date()) {
+  return getSolarTermForMonthDay(getBeijingMonthDay(date))
+}
