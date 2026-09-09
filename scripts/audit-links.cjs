@@ -56,8 +56,9 @@ console.log(`内部链接: ${hrefs.size}`)
 console.log(broken.length ? `❌ 死链 ${broken.length} 个:` : '✅ 无死链')
 broken.forEach((b) => console.log('  BROKEN:', b))
 
-// 4. CSV 目录表校验(期望 7 列)
+// 4. CSV 目录表校验(当前 8 列;兼容过渡期的 7 列旧表)
 const csvPath = path.join(__dirname, '..', 'data', 'article-catalog.template.csv')
+let csvOk = true
 if (fs.existsSync(csvPath)) {
   const lines = fs.readFileSync(csvPath, 'utf8').split(/\r?\n/).filter(Boolean)
   // 简易带引号 CSV 解析
@@ -79,15 +80,21 @@ if (fs.existsSync(csvPath)) {
     return fields
   }
   const header = parseLine(lines[0])
-  let csvOk = true
+  const legacyHeader = ['标题', '发布日期', '原文链接', '平台', '分类', '作者', '状态']
+  const currentHeader = [...legacyHeader, 'calendar_key']
+  const headerText = header.join('|')
+  if (headerText !== legacyHeader.join('|') && headerText !== currentHeader.join('|')) {
+    csvOk = false
+    console.log('❌ CSV 表头必须为 7 列旧格式或 8 列含 calendar_key 的新格式')
+  }
   lines.forEach((line, i) => {
     const n = parseLine(line).length
-    if (n !== header.length) {
+    if (n !== legacyHeader.length && n !== currentHeader.length) {
       csvOk = false
-      console.log(`❌ CSV 第 ${i + 1} 行列数 ${n} != 表头 ${header.length}`)
+      console.log(`❌ CSV 第 ${i + 1} 行列数 ${n}，应为 7 或 8`)
     }
   })
-  if (csvOk) console.log(`✅ CSV 格式正确(${lines.length - 1} 条数据行,${header.length} 列)`)
+  if (csvOk) console.log(`✅ CSV 格式正确(${lines.length - 1} 条数据行,${header.length} 列表头)`)
 }
 
-process.exit(broken.length ? 1 : 0)
+process.exit(broken.length || !csvOk ? 1 : 0)

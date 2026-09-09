@@ -3,6 +3,7 @@
 // 色相随当天事件微调,整页背板的水合后微调由 onMounted 设置全局变量
 import { onMounted, ref } from 'vue'
 import { data as rawArticles } from '../../data/articleCatalog.data.js'
+import { findCalendarArticle } from '../../data/articleCatalog.js'
 import { getBeijingMonthDay, solarTerms } from '../../data/solarTerms'
 import { getFestivalsOnDate } from '../../data/festivals'
 
@@ -11,18 +12,11 @@ const highlights = ref([])
 
 const articles = Array.isArray(rawArticles) ? rawArticles : []
 
-function articleFor(event) {
-  const candidates = articles
-    .filter((article) => article.date.slice(5) === event.md)
-    .sort((a, b) => b.date.localeCompare(a.date))
-  return candidates.find((article) => article.title.includes(event.name)) || candidates[0] || null
-}
-
 // 水合后把节气色相挂到根元素,首页背板的渐变随之微调
 onMounted(() => {
   const mmdd = getBeijingMonthDay()
   const events = [...getFestivalsOnDate(), ...solarTerms.filter((event) => event.md === mmdd)]
-    .map((event) => ({ ...event, article: articleFor(event) }))
+    .map((event) => ({ ...event, article: findCalendarArticle(articles, event.key) }))
   highlights.value = events
   if (events[0]) {
     document.documentElement.style.setProperty('--seasonal-hue', String(events[0].hue))
