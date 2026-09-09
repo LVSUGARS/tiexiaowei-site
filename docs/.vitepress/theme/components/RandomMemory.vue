@@ -3,13 +3,15 @@
 import { randomPages } from '../../data/randomPages'
 
 function open() {
+  if (!randomPages.length) return
   const pick = randomPages[Math.floor(Math.random() * randomPages.length)]
   window.location.href = pick.link
 }
 </script>
 
 <template>
-  <button class="random-btn" type="button" @click="open">🎲 随手翻开一页</button>
+  <button class="random-btn" type="button" :disabled="!randomPages.length" @click="open">🎲 随手翻开一页</button>
+  <p v-if="!randomPages.length" class="random-empty">暂时没有可公开随机浏览的内容。</p>
 </template>
 
 <style scoped>
@@ -26,5 +28,13 @@ function open() {
 }
 .random-btn:hover {
   background: var(--vp-c-brand-soft);
+}
+.random-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.random-empty {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
 }
 </style>

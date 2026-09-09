@@ -33,12 +33,16 @@ const archiveSidebar = [
     text: '馆藏分类',
     collapsed: false,
     items: [
-      { text: '活动存档', link: '/activity/' },
       { text: '资料库', link: '/resources/' },
       { text: '文章库', link: '/library/' },
       { text: '主题标签', link: '/tags/' },
       { text: '口述史', link: '/stories/' }
     ]
+  },
+  {
+    text: '关联内容',
+    collapsed: true,
+    items: [{ text: '活动存档', link: '/activity/' }]
   }
 ]
 
@@ -48,9 +52,7 @@ const activitySidebar = [
     collapsed: false,
     items: [
       { text: '总览与台账模板', link: '/activity/' },
-      { text: '年度总结 · 2026', link: '/activity/annual-2026' },
-      { text: '2026', link: '/activity/#2026' },
-      { text: '2022', link: '/activity/#2022' }
+      { text: '年度总结 · 2026', link: '/activity/annual-2026' }
     ]
   }
 ]

@@ -26,6 +26,8 @@ import PhotoWall from '../.vitepress/theme/components/PhotoWall.vue'
 
 <ActivityTimeline />
 
+年份索引(2026、2022…)与时间轴由同一份台账数据自动生成,不需要手工登记侧栏。
+
 ## 精选瞬间
 
 <PhotoWall />

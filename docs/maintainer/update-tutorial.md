@@ -29,11 +29,11 @@ pnpm install
 
 1. 复制 `docs/activity/sample-shooting-task.md`,改名为新活动(英文/拼音,如 `2026-sports-meeting.md`),填好 frontmatter 与正文
 2. 不需要手工维护时间轴或列表:构建时会扫描 `docs/activity/*.md` 的 frontmatter,时间轴与"历史上的今天"自动生效
-3. 单篇活动不登记到侧栏;年份入口只在 `config.mts` 的活动分组中维护
+3. 单篇活动不登记到侧栏;时间轴顶部的年份索引也由活动数据自动生成,不需要改 `config.mts`
 
 ### 场景二:收录一篇公众号文章
 
-打开 `data/article-catalog.template.csv`,**追加一行**(标题 / 日期 / 原文链接 / 平台 / 分类 / 作者 / 状态),保存为 UTF-8 编码。完整字段说明见[收录规范](/library/spec)。
+打开 `data/article-catalog.template.csv`,**追加一行**(标题 / 日期 / 原文链接 / 平台 / 分类 / 作者 / 状态 / `calendar_key`),保存为 UTF-8 编码。普通文章的 `calendar_key` 留空;只有确实对应节日或节气的文章才填写稳定键。完整字段说明见[收录规范](/library/spec)。
 
 ### 场景三:新增一个资料条目
 

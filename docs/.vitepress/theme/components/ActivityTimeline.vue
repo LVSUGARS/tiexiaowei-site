@@ -15,7 +15,10 @@ const byYear = (y) => activities.value.filter((a) => a.date.slice(0, 4) === y)
 </script>
 
 <template>
-  <div>
+  <div v-if="years.length">
+    <nav class="tl-years" aria-label="按年份浏览活动">
+      <a v-for="y in years" :key="y" :href="`#${y}`">{{ y }}</a>
+    </nav>
     <div v-for="y in years" :key="y">
       <h3 :id="y" class="tl-year">{{ y }}</h3>
       <div class="tl">
@@ -29,4 +32,5 @@ const byYear = (y) => activities.value.filter((a) => a.date.slice(0, 4) === y)
       </div>
     </div>
   </div>
+  <p v-else class="tl-empty">活动台账正在整理中。</p>
 </template>

@@ -6,9 +6,7 @@ export const randomPages = [
   { title: '示例 · 迎新晚会拍摄(未发布)', link: '/activity/sample-shooting-task' },
   { title: '全国荣誉:职院融媒创新案例 50 席', link: '/about/awards' },
   { title: '四端新媒体矩阵', link: '/about/matrix' },
-  { title: '收录规范:一条档案的正确写法', link: '/library/spec' },
   { title: '校园号专栏', link: '/library/univs' },
   { title: '部门总览:6 部 8 组', link: '/department/' },
-  { title: '换届交接手册', link: '/maintainer/handover' },
   { title: '条目示例 · 相机基础学习路线', link: '/resources/sample-study-material' }
 ]

@@ -4,7 +4,7 @@ title: 主题标签
 
 # 主题标签索引
 
-> 档案馆的"检索卡片":一个标签串起活动与资料(后续接入文章库)。**自动聚合**——给任何 `activity/` 或 `resources/` 下的 md 加 `tags: [标签名]` frontmatter,本页自动归类,零登记。
+> 档案馆的"检索卡片":当前只聚合活动与资料的标签，文章库尚未接入标签数据。给任何 `activity/` 或 `resources/` 下的 md 加 `tags: [标签名]` frontmatter,本页自动归类,零登记。
 
 <script setup>
 import TagsIndex from '../.vitepress/theme/components/TagsIndex.vue'
