@@ -1,7 +1,7 @@
 <script setup>
 // 首页一体化面板:精选内容 + 系统入口,不重复完整顶栏目录
 import { computed } from 'vue'
-import { appLinks } from '../../appLinks'
+import { appLinks, signupUrl } from '../../appLinks'
 import { homeNav } from '../../data/homeNav'
 import { data as rawActivities } from '../../data/activityIndex.data.js'
 import { normalize } from '../../data/activityNormalize.js'
@@ -15,30 +15,18 @@ const resources = computed(() =>
   )
 )
 const articleCount = Array.isArray(articles) ? articles.length : 0
-const today = new Intl.DateTimeFormat('en-CA', {
-  timeZone: 'Asia/Shanghai',
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit'
-}).format(new Date())
-const latestActivity = computed(
-  () => activities.value.find((activity) => activity.date.slice(0, 10) <= today) || null
-)
 </script>
 
 <template>
   <section class="home-panel">
     <div class="home-panel-inner">
-      <section class="home-signal" aria-label="档案动态">
+      <section class="home-signal" aria-label="迎新公告">
         <div class="home-signal-main">
-          <p class="home-signal-kicker">档案动态</p>
-          <a v-if="latestActivity" class="home-signal-title" :href="latestActivity.url">
-            {{ latestActivity.title }}
+          <p class="home-signal-kicker">迎新公告</p>
+          <a class="home-signal-title" :href="signupUrl" target="_blank" rel="noopener">
+            2026 纳新进行中，四个方向等你加入
           </a>
-          <span v-else class="home-signal-title">档案正在持续整理</span>
-          <span v-if="latestActivity" class="home-signal-meta">
-            {{ latestActivity.date.slice(0, 10) }} · {{ latestActivity.type }}
-          </span>
+          <span class="home-signal-meta">拍摄 · 采写 · 运营 · 设计</span>
         </div>
         <div class="home-signal-stats" aria-label="档案数量">
           <div><b>{{ activities.length }}</b><span>活动记录</span></div>
