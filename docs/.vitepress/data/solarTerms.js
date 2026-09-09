@@ -1,5 +1,5 @@
 // 二十四节气近似日期表(每年 ±1 天浮动,精确排布请以天文年历为准)
-// md: 触发日期(月-日),当天及之后到下一个节气为止
+// md: 节气当天(月-日),只有当天会显示“今日”徽章
 // hue: 该节气的氛围色相(背景微调用)——春嫩绿 / 夏青蓝 / 秋暖橙 / 冬深蓝
 export const solarTerms = [
   { name: '小寒', md: '01-05', emoji: '❄️', hue: 225 },
@@ -51,4 +51,10 @@ export function getSolarTermForMonthDay(mmdd) {
 
 export function getCurrentSolarTerm(date = new Date()) {
   return getSolarTermForMonthDay(getBeijingMonthDay(date))
+}
+
+// 只在节气当天返回记录,其他日期返回 null。
+export function getSolarTermOnDate(date = new Date()) {
+  const mmdd = getBeijingMonthDay(date)
+  return solarTerms.find((term) => term.md === mmdd) || null
 }

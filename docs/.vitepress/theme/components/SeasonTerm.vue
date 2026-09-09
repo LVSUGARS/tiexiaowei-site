@@ -1,19 +1,26 @@
 <script setup>
 // 首页 Hero 上方的节气彩蛋:链接《二十四节气》获奖专题
 // 色相随节气微调:徽章即时着色,整页背板的水合后微调由 onMounted 设置全局变量
-import { computed, onMounted } from 'vue'
-import { getCurrentSolarTerm } from '../../data/solarTerms'
+import { onMounted, ref } from 'vue'
+import { getSolarTermOnDate } from '../../data/solarTerms'
 
-const term = computed(() => getCurrentSolarTerm())
+// 静态站不能依赖构建日期,因此只在客户端按当天北京时间计算。
+const term = ref(null)
 
 // 水合后把节气色相挂到根元素,首页背板的渐变随之微调
 onMounted(() => {
-  document.documentElement.style.setProperty('--seasonal-hue', String(term.value.hue))
+  term.value = getSolarTermOnDate()
+  if (term.value) {
+    document.documentElement.style.setProperty('--seasonal-hue', String(term.value.hue))
+  } else {
+    document.documentElement.style.removeProperty('--seasonal-hue')
+  }
 })
 </script>
 
 <template>
   <a
+    v-if="term"
     class="term-chip"
     href="/about/awards"
     title="《二十四节气》全国获奖专题"
