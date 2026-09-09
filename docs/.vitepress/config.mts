@@ -24,11 +24,22 @@ const aboutSidebar = [
 ]
 
 const archiveSidebar = [
-  { text: '档案馆介绍', link: '/archive/' },
-  { text: '资料库', link: '/resources/' },
-  { text: '文章库', link: '/library/' },
-  { text: '主题标签', link: '/tags/' },
-  { text: '口述史', link: '/stories/' }
+  {
+    text: '档案馆总览',
+    collapsed: false,
+    items: [{ text: '档案馆介绍', link: '/archive/' }]
+  },
+  {
+    text: '馆藏分类',
+    collapsed: false,
+    items: [
+      { text: '活动存档', link: '/activity/' },
+      { text: '资料库', link: '/resources/' },
+      { text: '文章库', link: '/library/' },
+      { text: '主题标签', link: '/tags/' },
+      { text: '口述史', link: '/stories/' }
+    ]
+  }
 ]
 
 const activitySidebar = [
