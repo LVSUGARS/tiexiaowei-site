@@ -79,7 +79,7 @@
   .VPHero .text {
     width: auto;
     max-width: 100%;
-    white-space: normal;
+    white-space: pre-wrap;
     overflow-wrap: anywhere;
   }
   .VPHero .tagline {
