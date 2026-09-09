@@ -4,7 +4,7 @@
 import { onMounted, ref } from 'vue'
 import { data as rawArticles } from '../../data/articleCatalog.data.js'
 import { getBeijingMonthDay, solarTerms } from '../../data/solarTerms'
-import { festivals } from '../../data/festivals'
+import { getFestivalsOnDate } from '../../data/festivals'
 
 // 静态站不能依赖构建日期,因此只在客户端按当天北京时间计算。
 const highlights = ref([])
@@ -21,8 +21,7 @@ function articleFor(event) {
 // 水合后把节气色相挂到根元素,首页背板的渐变随之微调
 onMounted(() => {
   const mmdd = getBeijingMonthDay()
-  const events = [...festivals, ...solarTerms]
-    .filter((event) => event.md === mmdd)
+  const events = [...getFestivalsOnDate(), ...solarTerms.filter((event) => event.md === mmdd)]
     .map((event) => ({ ...event, article: articleFor(event) }))
   highlights.value = events
   if (events[0]) {
