@@ -42,6 +42,58 @@
   .VPHero .name.clip { animation: none; }
 }
 
+/* 首页 Hero 的窄屏排版:右侧空间保留给未来 Logo,文字不挤出视口 */
+.VPHero .container,
+.VPHero .main {
+  min-width: 0;
+}
+@media (min-width: 960px) {
+  .VPHero .container {
+    max-width: 1152px;
+  }
+  .VPHero .main {
+    max-width: 680px;
+  }
+}
+@media (max-width: 640px) {
+  .VPHero .container {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .VPHero .main {
+    width: 100%;
+    max-width: 100%;
+    flex-shrink: 1;
+  }
+  .VPHero .heading {
+    width: 100%;
+    min-width: 0;
+  }
+  .VPHero .name {
+    width: auto;
+    font-size: 40px;
+    line-height: 1.12;
+  }
+  .VPHero .text {
+    width: auto;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .VPHero .tagline {
+    width: 100%;
+    max-width: none;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+  .VPHero .actions {
+    flex-wrap: wrap;
+  }
+}
+
 /* 全站纠错行(doc-footer-before 插槽) */
 .feedback-line {
   margin: 8px 0 0;
