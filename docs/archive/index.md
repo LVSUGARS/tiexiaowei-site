@@ -8,18 +8,37 @@ import RandomMemory from '../.vitepress/theme/components/RandomMemory.vue'
 
 # 档案馆
 
-铁小微沉淀下来的内容从四类馆藏进入:资料、文章、主题标签和口述史。每个栏目保持独立的 VitePress 页面与侧栏分组，单篇内容从对应列表页进入。
+铁小微沉淀下来的内容从四类馆藏进入。下方每个入口都可以**展开**查看栏目说明与直达链接——想细看再点进去，不必离开这一页。
 
 <RandomMemory />
 
 > 没有目标地翻一翻,也是逛档案馆的正确姿势——每一页都曾被某个成员认真对待过。
 
-<div class="card-grid cols-2">
-  <a class="card" href="/resources/"><span class="icon">📦</span><span><span class="name">资料库</span><span class="desc">学习资料、培训成果与素材索引</span></span></a>
-  <a class="card" href="/library/"><span class="icon">🗂️</span><span><span class="name">文章库</span><span class="desc">公众号、校园号等平台的公开内容索引</span></span></a>
-  <a class="card" href="/tags/"><span class="icon">🏷️</span><span><span class="name">主题标签</span><span class="desc">按活动与资料标签串起的检索卡片</span></span></a>
-  <a class="card" href="/stories/"><span class="icon">🎙️</span><span><span class="name">口述史</span><span class="desc">成员经验与换届记忆的长期栏目</span></span></a>
-</div>
+::: details 📦 资料库 —— 学习资料、培训成果与素材索引
+学习资料、培训成果与素材索引，统一条目模式:几张图 + 一段说明 + 网盘链接。
+
+- [资料库总览](/resources/)
+- [收录指南:如何贡献一个条目](/resources/contribute)
+:::
+
+::: details 🗂️ 文章库 —— 公众号、校园号等平台的公开内容索引
+公众号、校园号等平台发布内容的全平台索引，按年浏览、站内检索。
+
+- [文章库总览](/library/)
+- [收录规范(目录表 schema)](/library/spec) · [校园号专栏](/library/univs)
+:::
+
+::: details 🏷️ 主题标签 —— 按活动与资料标签串起的检索卡片
+按 frontmatter 中的 `tags` 自动聚合的检索卡片，当前覆盖活动与资料。
+
+- [主题标签索引](/tags/)
+:::
+
+::: details 🎙️ 口述史 —— 成员经验与换届记忆的长期栏目
+记录成员经验与换届记忆的长期栏目，当前提供采访提纲和篇目入口。
+
+- [口述史栏目](/stories/)
+:::
 
 ## 关联活动台账
 
