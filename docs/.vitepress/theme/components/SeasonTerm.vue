@@ -1,17 +1,32 @@
 <script setup>
-// 首页 Hero 上方的节气彩蛋:链接《二十四节气》获奖专题
-// 色相随节气微调:徽章即时着色,整页背板的水合后微调由 onMounted 设置全局变量
+// 首页 Hero 上方的节气/节日彩蛋:有对应文章时自动链接到文章目录
+// 色相随当天事件微调,整页背板的水合后微调由 onMounted 设置全局变量
 import { onMounted, ref } from 'vue'
-import { getSolarTermOnDate } from '../../data/solarTerms'
+import { data as rawArticles } from '../../data/articleCatalog.data.js'
+import { getBeijingMonthDay, solarTerms } from '../../data/solarTerms'
+import { festivals } from '../../data/festivals'
 
 // 静态站不能依赖构建日期,因此只在客户端按当天北京时间计算。
-const term = ref(null)
+const highlights = ref([])
+
+const articles = Array.isArray(rawArticles) ? rawArticles : []
+
+function articleFor(event) {
+  const candidates = articles
+    .filter((article) => article.date.slice(5) === event.md)
+    .sort((a, b) => b.date.localeCompare(a.date))
+  return candidates.find((article) => article.title.includes(event.name)) || candidates[0] || null
+}
 
 // 水合后把节气色相挂到根元素,首页背板的渐变随之微调
 onMounted(() => {
-  term.value = getSolarTermOnDate()
-  if (term.value) {
-    document.documentElement.style.setProperty('--seasonal-hue', String(term.value.hue))
+  const mmdd = getBeijingMonthDay()
+  const events = [...festivals, ...solarTerms]
+    .filter((event) => event.md === mmdd)
+    .map((event) => ({ ...event, article: articleFor(event) }))
+  highlights.value = events
+  if (events[0]) {
+    document.documentElement.style.setProperty('--seasonal-hue', String(events[0].hue))
   } else {
     document.documentElement.style.removeProperty('--seasonal-hue')
   }
@@ -19,18 +34,32 @@ onMounted(() => {
 </script>
 
 <template>
-  <a
-    v-if="term"
-    class="term-chip"
-    href="/about/awards"
-    title="《二十四节气》全国获奖专题"
-    :style="{ '--seasonal-hue': String(term.hue) }"
-  >
-    {{ term.emoji }} 今日{{ term.name }} · 《二十四节气》获奖系列
-  </a>
+  <div v-if="highlights.length" class="calendar-chips">
+    <template v-for="event in highlights" :key="event.name">
+      <a
+        v-if="event.article"
+        class="term-chip"
+        :href="event.article.url"
+        target="_blank"
+        rel="noopener"
+        :style="{ '--seasonal-hue': String(event.hue) }"
+      >
+        {{ event.emoji }} 今日{{ event.name }} · {{ event.article.title }}
+      </a>
+      <span v-else class="term-chip" :style="{ '--seasonal-hue': String(event.hue) }">
+        {{ event.emoji }} 今日{{ event.name }}
+      </span>
+    </template>
+  </div>
 </template>
 
 <style scoped>
+.calendar-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
 .term-chip {
   display: inline-flex;
   align-items: center;
@@ -43,6 +72,9 @@ onMounted(() => {
   font-weight: 600;
   text-decoration: none;
   transition: background 0.25s;
+}
+.calendar-chips span.term-chip {
+  cursor: default;
 }
 .term-chip:hover {
   background: hsla(var(--seasonal-hue, 227), 80%, 60%, 0.15);

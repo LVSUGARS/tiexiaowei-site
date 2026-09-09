@@ -21,7 +21,7 @@ export default {
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      // 首页 Hero 信息区之前插入节气彩蛋
+      // 首页 Hero 信息区之前插入节气/节日彩蛋
       'home-hero-info-before': () => h(SeasonTerm),
       // 首页 features 区位插入一体化面板(站点导航 + 系统入口)
       'home-features-after': () => h(HomePanel),
