@@ -26,18 +26,10 @@ const aboutSidebar = [
 // 档案馆侧栏:官方默认手风琴结构,资料/文章/标签/口述史以分组收纳,
 // 点击分组标题就地展开/收起,不再直接跳到独立栏目页
 // 档案馆统一侧栏(官方默认手风琴,全部展开、可收纳):
-// 档案馆及其四库(活动/资料/文章/标签/口述史)共用这一份,任何档案页左侧目录一致,
-// 点分组标题就地展开子链接,不会跳到"单独栏目"的窄侧栏
+// 档案馆与四库(资料/文章/标签/口述史)共用这一份,任何档案页左侧目录一致;
+// 活动是顶栏独立一级栏目,只在底部留"关联内容"轻跳转
 const archiveSidebar = [
   { text: '档案馆介绍', link: '/archive/' },
-  {
-    text: '活动存档',
-    collapsed: false,
-    items: [
-      { text: '总览与台账模板', link: '/activity/' },
-      { text: '年度总结 · 2026', link: '/activity/annual-2026' }
-    ]
-  },
   {
     text: '资料库',
     collapsed: false,
@@ -56,7 +48,23 @@ const archiveSidebar = [
     ]
   },
   { text: '主题标签', link: '/tags/' },
-  { text: '口述史', link: '/stories/' }
+  { text: '口述史', link: '/stories/' },
+  {
+    text: '关联内容',
+    collapsed: true,
+    items: [{ text: '活动存档', link: '/activity/' }]
+  }
+]
+
+const activitySidebar = [
+  {
+    text: '活动存档',
+    collapsed: false,
+    items: [
+      { text: '总览与台账模板', link: '/activity/' },
+      { text: '年度总结 · 2026', link: '/activity/annual-2026' }
+    ]
+  }
 ]
 
 // 站点配置 —— 铁小微融媒体中心
@@ -143,11 +151,12 @@ export default defineConfig({
       ],
       '/archive/': archiveSidebar,
       // 档案馆四库与介绍页共用同一份侧栏(手风琴),进入任一库页目录保持不变
-      '/activity/': archiveSidebar,
       '/resources/': archiveSidebar,
       '/library/': archiveSidebar,
       '/tags/': archiveSidebar,
       '/stories/': archiveSidebar,
+      // 活动是顶栏独立一级栏目,使用自己的局部侧栏
+      '/activity/': activitySidebar,
       '/friends/': aboutSidebar,
       '/demo/': [
         {
