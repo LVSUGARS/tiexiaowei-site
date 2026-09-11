@@ -26,14 +26,15 @@
   --vp-home-hero-name-color: transparent;
 }
 .VPHero .name.clip {
-  background-image: linear-gradient(120deg, #1b2a6b 0%, #4d6bfe 35%, #6580ff 58%, #38bdf8 82%, #7dd3fc 100%);
+  /* 渐变两端都保持足够对比度(实测最差 ≥4:1),避免尾字在浅色背景上“发白看不清” */
+  background-image: linear-gradient(120deg, #16225c 0%, #3f56cc 45%, #4d6bfe 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   animation: hero-name-shimmer 9s linear infinite;
 }
 .dark .VPHero .name.clip {
-  background-image: linear-gradient(120deg, #7dd3fc 0%, #38bdf8 28%, #6580ff 52%, #4d6bfe 76%, #2b3f9e 100%);
+  background-image: linear-gradient(120deg, #cfeaff 0%, #7dd3fc 22%, #38bdf8 50%, #6580ff 78%, #4d6bfe 100%);
 }
 @keyframes hero-name-shimmer {
   to { background-position: 200% center; }
@@ -467,3 +468,37 @@ ol.steps li b {
 .vp-doc a:hover {
   text-decoration-color: currentColor;
 }
+
+/* ===== 键盘可达性:自定义组件与链接补可见焦点环(鼠标点击不触发) ===== */
+.card-grid .card:focus-visible,
+.home-card:focus-visible,
+.home-signal-title:focus-visible,
+.random-btn:focus-visible,
+.term-chip:focus-visible,
+.tl-item:focus-visible,
+.announcement-banner a:focus-visible,
+.feedback-line a:focus-visible,
+.cta-panel a:focus-visible,
+.stat-card:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+/* 侧栏与正文链接:VitePress 自带焦点样式较弱,统一补一圈 */
+.VPSidebar a:focus-visible,
+.VPNavBar a:focus-visible,
+.vp-doc a:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+/* 按钮类控件:统一品牌色焦点环(outline 会跟随圆角) */
+.VPButton:focus-visible,
+.DocSearch-Button:focus-visible,
+.VPSwitch:focus-visible,
+.VPSkipLink:focus-visible,
+.random-btn:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
