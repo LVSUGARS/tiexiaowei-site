@@ -14,7 +14,7 @@ import { signupUrl, memberUrl } from '../.vitepress/appLinks'
 <div class="cta-panel">
   <p class="cta-kicker">2026 秋季纳新 · 进行中</p>
   <h3>加入铁小微融媒体中心</h3>
-  <p style="margin:0 0 16px; color:var(--vp-c-text-2);">填写报名表单即可,零基础完全没问题;也可以先到各部门介绍里逛逛再决定。纳新开放时间以当届招新推文为准。</p>
+  <p style="margin:0 0 16px; color:var(--vp-c-text-2);">填写报名表单即可,零基础完全没问题;也可以先到各部门介绍里逛逛再决定。报名截止时间以纳新群内通知为准。</p>
   <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
     <VPButton theme="brand" size="big" text="进入新生报名" :href="signupUrl" />
     <VPButton theme="alt" size="big" text="先看看部门" link="/department/" />
@@ -34,11 +34,18 @@ import { signupUrl, memberUrl } from '../.vitepress/appLinks'
 
 > ⚠️ 以上为 2026-2027 学年架构;具体职责说明为拟定稿,以中心内部确认为准。
 
+## 纳新 QQ 群
+
+<div class="card-grid cols-2">
+  <div class="card"><span class="icon">👥</span><span><span class="name">纳新群号 132475512</span><span class="desc">进群请改备注「班级-姓名-意向部门」</span></span></div>
+  <div class="card"><span class="icon">💬</span><span><span class="name">有问题直接群里问</span><span class="desc">面试等后续安排也都在群内通知,留意群消息</span></span></div>
+</div>
+
 ## 报名流程
 
 <ol class="steps">
-  <li><b>线上报名</b><br>点击上方按钮填写报名表单,留好联系方式。</li>
-  <li><b>等待通知</b><br>纳新负责人会通过表单里的联系方式告知面聊安排。</li>
+  <li><b>线上填报</b><br>点击上方「进入新生报名」按钮,填写报名表单,留好联系方式。</li>
+  <li><b>加入纳新群</b><br>群号 <code>132475512</code>;后续面试等安排都在群里通知,有问题也直接在群里问。</li>
   <li><b>简单面聊</b><br>不考技能,只聊兴趣和可投入的时间,零基础完全没问题。</li>
   <li><b>正式入部</b><br>进入<a :href="memberUrl" target="_blank" rel="noopener">成员端</a>,开始你的第一篇作品。</li>
 </ol>
@@ -49,6 +56,10 @@ import { signupUrl, memberUrl } from '../.vitepress/appLinks'
 
 ::: details 零基础、没有设备可以加入吗?
 可以。中心更看重兴趣与投入度,设备可以先用部门的,技能有内部培训(见[资料库](/resources/))。
+:::
+
+::: details 咨询和后续安排在哪里通知?
+加入纳新 QQ 群 <code>132475512</code>;面试等安排都在群内通知,进群请改备注「班级-姓名-意向部门」。
 :::
 
 ::: details 纳新面试考什么?
