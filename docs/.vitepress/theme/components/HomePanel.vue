@@ -25,7 +25,7 @@ import { homeNav } from '../../data/homeNav'
           <span class="home-card-desc">{{ item.desc }}</span>
         </a>
       </div>
-      <p class="home-panel-label app"><span>成员工作区</span><small>成员端需登录 · 报名免登录</small></p>
+      <p class="home-panel-label app"><span>成员工作区</span></p>
       <div class="home-panel-grid cols-2">
         <a v-for="item in appLinks" :key="item.key" class="home-card" :href="item.url" target="_blank" rel="noopener">
           <span class="home-card-icon">{{ item.icon }}</span>
