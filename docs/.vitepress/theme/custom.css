@@ -64,8 +64,9 @@
   .VPHero .container {
     width: 100%;
     box-sizing: border-box;
-    padding-right: 24px;
-    padding-left: 24px;
+    /* VPHero 自带 24px 内边距,这里不能再叠加,否则内容区被压到 279px、标题被迫断字 */
+    padding-right: 0;
+    padding-left: 0;
   }
   .VPHero .main {
     width: 100%;
@@ -78,14 +79,18 @@
   }
   .VPHero .name {
     width: auto;
-    font-size: 40px;
-    line-height: 1.12;
+    /* 流式字号:320~430px 窄屏都能单行放下 8 字标题,不再断字 */
+    font-size: clamp(28px, 9vw, 36px);
+    line-height: 1.2;
+    white-space: nowrap;
   }
   .VPHero .text {
     width: auto;
     max-width: 100%;
+    /* 副标题同样流式适配,保持“校名 / 党委宣传部”两行结构 */
+    font-size: clamp(20px, 7.2vw, 28px);
+    line-height: 1.35;
     white-space: pre-wrap;
-    overflow-wrap: anywhere;
   }
   .VPHero .tagline {
     width: 100%;
