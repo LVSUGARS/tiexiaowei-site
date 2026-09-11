@@ -17,7 +17,7 @@ import { signupUrl, memberUrl } from '../.vitepress/appLinks'
   <p style="margin:0 0 16px; color:var(--vp-c-text-2);">填写报名表单即可,零基础完全没问题;也可以先到各部门介绍里逛逛再决定。报名截止时间以招新群内通知为准。</p>
   <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
     <VPButton theme="brand" size="big" text="进入新生报名" :href="signupUrl" />
-    <VPButton theme="alt" size="big" text="先看看部门" link="/department/" />
+    <VPButton theme="alt" size="big" text="先看看部门" href="/department/" />
   </div>
 </div>
 
