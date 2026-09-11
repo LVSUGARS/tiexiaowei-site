@@ -37,7 +37,7 @@ import { signupUrl, memberUrl } from '../.vitepress/appLinks'
 ## 纳新 QQ 群
 
 <div class="card-grid cols-2">
-  <div class="card"><span class="icon">👥</span><span><span class="name">纳新群号 132475512</span><span class="desc">进群请改备注「班级-姓名-意向部门」</span></span></div>
+  <a class="card" href="https://qm.qq.com/q/ysCDoJK7ew" target="_blank" rel="noopener"><span class="icon">👥</span><span><span class="name">纳新群号 132475512</span><span class="desc">点此加入纳新群 · 进群请改备注「班级-姓名-意向部门」</span></span></a>
   <div class="card"><span class="icon">💬</span><span><span class="name">有问题直接群里问</span><span class="desc">面试等后续安排也都在群内通知,留意群消息</span></span></div>
 </div>
 
