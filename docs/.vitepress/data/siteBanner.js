@@ -3,7 +3,7 @@ import { signupUrl } from '../appLinks'
 
 export const banner = {
   enabled: true,
-  text: '📣 2026 纳新进行中 —— 拍摄 / 采写 / 运营 / 设计,四个方向等你!',
+  text: '📣 2026 招新进行中 —— 视频 / 摄影 / 音频 / 采编 / 办公室 / 设计,六大部门等你加入!',
   linkText: '立即报名 →',
   link: signupUrl
 }

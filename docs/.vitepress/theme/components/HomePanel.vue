@@ -11,9 +11,9 @@ import { homeNav } from '../../data/homeNav'
         <div class="home-signal-main">
           <p class="home-signal-kicker">迎新公告</p>
           <a class="home-signal-title" :href="signupUrl" target="_blank" rel="noopener">
-            2026 纳新进行中，四个方向等你加入
+            2026 招新进行中，六大部门等你加入
           </a>
-          <span class="home-signal-meta">拍摄 · 采写 · 运营 · 设计</span>
+          <span class="home-signal-meta">视频 · 摄影 · 音频 · 采编 · 办公室 · 设计</span>
         </div>
       </section>
 
