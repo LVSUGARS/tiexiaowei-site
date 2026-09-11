@@ -4,7 +4,7 @@
 
 - **仓库**:<https://github.com/LVSUGARS/tiexiaowei-site>(内容唯一真源)
 - **部署**:GitHub Pages 自动部署(push 到 `main` 即发布),线上地址 <https://txwrmtzx.top/>;构建命令 `pnpm build`,产物目录 `docs/.vitepress/dist`
-- **框架设计计划书**:[PLAN.md](./PLAN.md)(v0.9,先读这个)
+- **框架设计计划书**:[PLAN.md](./PLAN.md)(当前 v0.15,先读这个)
 - **系统端(主应用)**:https://njrts.txwrmtzx.top/ (后台 `/admin/` · 成员端 `/member/` · 新生报名 `/register/`,入口统一配置在 `docs/.vitepress/appLinks.ts`)
 
 ## 快速开始
@@ -24,8 +24,9 @@ pnpm preview      # 预览构建产物
 | --- | --- |
 | 关于 | 中心简介、全国荣誉、新媒体矩阵 |
 | 部门 | 常青职能页 + 按年年册(换届留痕) |
-| 档案馆 | 活动工作台账、资料库、文章库(公众号 + 校园号) |
-| 招新指南 | 分方向介绍 + 报名 CTA |
+| 活动 | 活动工作台账(精选活动 / 时间轴 / 年度总结 / 照片墙) |
+| 档案馆 | 资料库、文章库(公众号 + 校园号)、主题标签、口述史 |
+| 招新指南 | 部门方向介绍 + 报名 CTA + 招新群 |
 | 维护者 | 维护指南、换届交接手册 |
 
 ## 当前状态
