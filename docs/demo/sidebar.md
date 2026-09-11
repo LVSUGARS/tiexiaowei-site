@@ -1,4 +1,5 @@
 ---
+search: false
 title: 侧边栏
 ---
 

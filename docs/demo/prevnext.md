@@ -1,4 +1,5 @@
 ---
+search: false
 title: 上下页链接
 ---
 

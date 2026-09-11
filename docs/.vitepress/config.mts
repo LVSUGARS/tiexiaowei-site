@@ -101,7 +101,9 @@ export default defineConfig({
   },
   sitemap: {
     // 正式根域(与 docs/public/CNAME、GitHub Pages 自定义域名设置保持一致)
-    hostname: 'https://txwrmtzx.top'
+    hostname: 'https://txwrmtzx.top',
+    // 组件试衣间(/demo/)是内部演示页,不对外收录;本地搜索另用 frontmatter search: false 排除
+    transformItems: (items) => items.filter((item) => !/(^|\/)demo\//.test(item.url))
   },
   vite: {
     plugins: [

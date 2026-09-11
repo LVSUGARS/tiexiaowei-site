@@ -1,4 +1,5 @@
 ---
+search: false
 title: 主页
 ---
 
